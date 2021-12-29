@@ -1,0 +1,398 @@
+@import url(StyleMain.css);
+:root {
+    --main-color: #04aa6d;
+    --second-color: #282a35;
+}
+
+.main-sec {
+    padding: 20px;
+    background-color: #fcfcfc80;
+}
+
+.top {
+    padding: 10px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+    border-bottom: 1px #cecdcd solid;
+}
+
+.top .img-container {
+    width: 120px;
+    height: 120px;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.header-details {}
+
+.header-details h2 {
+    text-transform: capitalize;
+    color: #04aa6d;
+    margin-bottom: 15px;
+}
+
+.header-details p {
+    text-transform: capitalize;
+    color: #888;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-menu {
+    left: -190px !important;
+}
+
+.fa-save,
+.fa-share-square,
+.fa-print {
+    color: var(--main-color);
+    margin-right: 4px;
+}
+
+.btn.focus,
+.btn:focus {
+    box-shadow: 0 0 0 0.2rem #00d05340;
+}
+
+.aside-title {
+    color: var(--main-color);
+}
+
+.main-content {}
+
+.main-content .secOne {
+    margin-bottom: 50px;
+}
+
+.main-content .secOne h2 {
+    text-transform: capitalize;
+    color: var(--main-color);
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.main-content .secOne h4 {
+    text-transform: capitalize;
+    color: var(--main-color);
+    font-size: 32px;
+}
+
+.main-content .secOne p {
+    margin-top: 20px;
+    color: #666;
+    font-size: 18px;
+}
+
+.secTwo {}
+
+.secTwo h3 {
+    font-size: 26px;
+    color: var(--second-color);
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+
+.secTwo ul li {
+    margin-bottom: 40px;
+}
+
+.secTwo ul li h4 {
+    color: var(--main-color);
+    text-transform: capitalize;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.secTwo ul li span {
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #999;
+}
+
+.secTwo ul li p {
+    font-size: 14px;
+    color: #666;
+}
+
+.infos {
+    margin-top: 50px;
+}
+
+.infos .info {
+    margin-bottom: 30px;
+}
+
+.info h4 {
+    font-size: 24px;
+    color: var(--second-color);
+    text-transform: capitalize;
+}
+
+.info p {
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 0;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.info span {
+    margin: 0 5px 0 5px;
+    font-size: 18px;
+    color: #888;
+}
+
+.fa-badge-check {
+    color: var(--main-color);
+}
+
+.avilablity {
+    margin-top: 30px;
+}
+
+.avilablity .img-cover {
+    width: 50px;
+    height: 50px;
+}
+
+.img-cover img {
+    width: 100%;
+    height: 100%;
+}
+
+.avilablity .avilbe-info {
+    margin-left: 15px;
+}
+
+.avilbe-info h3 {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.avilbe-info span {
+    font-size: 16px;
+    text-transform: capitalize;
+    background-color: #04aa6d;
+    color: white;
+    padding: 4px;
+    border-radius: 1rem;
+}
+
+.office-box {
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    margin-bottom: 60px;
+}
+
+.office-box h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: var(--main-color);
+}
+
+.fa-info {
+    color: var(--main-color);
+}
+
+.office-box h4 {
+    text-transform: capitalize;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.office-box span {
+    margin-bottom: 10px;
+    color: #666;
+    display: inline-block;
+}
+
+.office-box p {
+    color: #666;
+}
+
+.gallrey {
+    margin: auto;
+    padding: 3px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.gallrey img {
+    max-width: 100%;
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+}
+
+.gallrey .thumbnials {
+    overflow: hidden;
+}
+
+.gallrey .img-mian {
+    position: relative;
+    height: 270px;
+}
+
+.save2 {
+    display: inline-block;
+    position: absolute;
+    right: -40px;
+    top: 30px;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 40px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.gallrey .img-mian:hover .save2 {
+    right: 10px;
+}
+
+.save2:hover {
+    background-color: var(--main-color);
+}
+
+.save2:hover .fa-heart {
+    color: white;
+}
+
+.save2 .fa-heart {
+    font-size: 20px;
+}
+
+.gallrey .thumbnials img {
+    float: left;
+    border: 2px solid rgb(207, 207, 207);
+    cursor: pointer;
+    margin-top: 5px;
+    opacity: .5;
+}
+
+.gallrey .thumbnials img:last-child {
+    margin-right: 0 !important;
+}
+
+.gallrey .thumbnials img.selected {
+    border: solid 3px var(--main-color);
+    opacity: 1;
+}
+
+.img-mian span {
+    background-color: var(--main-color);
+    padding: 5px 12px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+}
+
+.img-mian span:first-of-type {
+    left: 0;
+}
+
+.img-mian span:last-of-type {
+    right: 0;
+}
+
+.fa-heart {
+    margin-bottom: 0;
+}
+
+.mt-2,
+.my-2 {
+    margin-top: 1.5rem !important;
+}
+
+.collapse {
+    background-color: transparent;
+}
+
+@media (max-width:767.98px) {
+    .gallrey .img-mian {
+        height: 234px;
+    }
+    .header-details h2 {
+        font-size: 22px;
+    }
+    .header-details p {
+        font-size: 14px;
+    }
+    .aside-title {
+        font-size: 22px;
+    }
+    .aside {
+        text-align: center;
+    }
+    .avilablity {
+        justify-content: center !important;
+    }
+    .infos .info {
+        margin-bottom: 40px;
+    }
+    .avilbe-info h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .info div {
+        justify-content: center !important;
+    }
+    .info h4 {
+        font-size: 20px;
+    }
+    .main-content {
+        margin-top: 50px;
+    }
+    .main-content .secOne h2 {
+        font-size: 26px;
+    }
+    .main-content .secOne h4 {
+        font-size: 26px;
+        display: block;
+    }
+    .main-content .secOne p {
+        font-size: 14px;
+    }
+    .secTwo ul li p {
+        font-size: 13px;
+    }
+    .office-box {
+        margin-bottom: 20px;
+    }
+    .office-box h3 {
+        font-size: 20px;
+    }
+    .office-box h4 {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .aside {
+        margin-bottom: 50px;
+    }
+    .infos .info {
+        margin-bottom: 30px;
+        width: 50%;
+        float: right;
+    }
+    .office-box {
+        width: 100%;
+    }
+}

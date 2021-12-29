@@ -1,0 +1,21 @@
+@import url(ServicesDetails.css);
+body {
+    text-align: right;
+    direction: rtl;
+}
+
+form .fa-search {
+    left: 10%;
+    right: unset;
+}
+
+.dropdown-menu {
+    left: 10px !important;
+}
+
+.fa-save,
+.fa-share-square,
+.fa-print {
+    margin-left: 4px;
+    margin-right: unset;
+}

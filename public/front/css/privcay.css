@@ -1,0 +1,76 @@
+@import url(StyleMain.css);
+
+:root{
+    --main-color:#04aa6d;
+    --second-color:#282a35;
+}
+
+/* "Quicksand", sans-serif */
+
+.img-main{
+    width: 100%;
+    height: 500px;
+    position: relative;
+    background-color: #f8f9fa!important;
+}
+
+.img-main img{
+    width: 100%;
+    height: 80%;
+    padding-top: 100px;
+}
+
+
+.main-content{
+    margin-top: 50px;
+    margin-bottom: 150px;
+
+}
+
+.main-content h1{
+    font-size: 42px;
+    margin-bottom: 50px;
+    color:var(--second-color);
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.main-content .rowContent{
+    margin: 20px 0px 20px 0px;
+    padding: 10px 0 10px 0;
+}
+
+.rowContent h2{
+    text-transform: capitalize;
+    font-size: 26px;
+    color: var(--main-color);
+    margin-bottom: 20px;
+}
+
+.rowContent p{
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 10px;
+    text-align: justify;
+    line-height: 28px;
+}
+
+.breadcrumb{
+    background-color: transparent;
+}
+
+
+@media (max-width: 575.98px) {
+
+    .main-content h1{
+        font-size: 36px;
+    }
+    .rowContent h2{
+        font-size: 20px;
+    }
+
+    .rowContent p{
+        font-size: 14px;
+    }
+
+}

@@ -1,0 +1,24 @@
+@import url(About.css);
+body {
+    text-align: right;
+    direction: rtl;
+}
+
+form .fa-search {
+    right: unset;
+    left: 10%;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    float: right;
+    padding-right: unset;
+    padding-left: 0.5rem;
+}
+
+.image-side {
+    justify-content: start;
+}
+
+.s {
+    justify-content: end;
+}

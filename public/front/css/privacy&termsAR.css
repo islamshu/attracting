@@ -1,0 +1,16 @@
+@import url(privcay.css);
+body {
+    direction: rtl;
+    text-align: right;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    float: right;
+    padding-right: unset;
+    padding-left: .5rem;
+}
+
+form .fa-search {
+    left: 10%;
+    right: unset;
+}
