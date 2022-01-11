@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\City;
 use App\FirstSection;
 use App\Menu;
 use App\MessageLetter;
@@ -22,7 +23,9 @@ class HomeController extends Controller
         $services = Service::where('status',1)->get();
 
         $fetures = FirstSection::first();
-        $workers = Worker::inRandomOrder(6)->get();
+        $workers = Worker::with('company')->where('status','0')->whereHas('company', function ($q)  {
+            $q->where('status', 1);
+        })->inRandomOrder(6)->get();
         $how_works = Work::orderBy('order','asc')->get();
         $statstic = Statistic::first();
     
@@ -55,5 +58,54 @@ class HomeController extends Controller
             return 'true';
         }
 
+    }
+    public function fillter(Request $request)
+    {
+        // $workers =Worker::get(); 
+        $goverments = City::where('parent_id',0)->get();
+        $query  = Worker::query()->with('company')->whereHas('company', function ($q) use ($request) {
+            $q->where('status', 1);
+        });
+
+        $query->when($request->title, function ($q) use ($request) {
+            return $q->where('name', $request->title);
+        });
+        $query->when($request->governorate_id, function ($q) use ($request) {
+            // if($request->governorate_id != )
+            return $q->where('governorate_id', $request->governorate_id);
+        });
+        $query->when($request->state_id, function ($q) use ($request) {
+            // if($request->governorate_id != )
+            return $q->where('state_id', $request->state_id);
+        });
+        $query->when($request->learn, function ($q) use ($request) {
+            if($request->learn == 0 ){
+                return ;
+            }else{
+                return $q->where('degree', $request->learn - 1);
+
+            }
+        });
+        $query->when($request->states, function ($q) use ($request) {
+            if($request->states == 0 ){
+                return ;
+            }else{
+                return $q->where('social_status', strval($request->states - 1));
+            }
+        });
+        $query->when($request->states, function ($q) use ($request) {
+            if($request->states == 0 ){
+                return ;
+            }else{
+                return $q->where('social_status', strval($request->states - 1));
+            }
+        });
+        if($request->min_price != null || $request->max_price != null )
+        $query->whereBetween('salary', [$request->min_price, $request->max_price]);
+
+        
+        $workers = $query->paginate(8);
+        
+        return view('frontend._fillter',compact('goverments','workers','request',));
     }
 }

@@ -1,0 +1,89 @@
+@import url(style.css);
+
+
+.panel{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px;
+    max-width: 80%;
+    border-radius: .1rem;
+}
+
+.list, .content{
+    height: 1000px;
+}
+
+
+.content-main{
+    padding: 20px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+
+}
+
+.content-main h3{
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.payDetail{
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+  .table td,
+  .table th {
+    font-weight: 400;
+
+  }
+
+  .table th {
+    font-weight: 500;
+  }
+
+  
+  .table .desc {
+    width: 35%;
+  }
+
+
+  h2{
+    font-weight: 700;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+.panel .list ,.panel .content,.panel{
+    height: auto;
+}
+
+
+.table-sm td, .table-sm th{
+    padding: 10px;
+}
+
+
+@media (max-width: 767.98px) {
+
+  .content-main h3{
+    font-size: 16px;
+  }
+
+  .panel{
+    max-width: 100%;
+    overflow: scroll;
+  }
+
+  .table-sm td, .table-sm th{
+    font-size: 10px;
+  }
+
+  .billhead{
+    font-size: 10px;
+  }
+
+  .col img{
+    width: 100px !important;
+    margin-top: 15px !important;
+  }
+}

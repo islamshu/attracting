@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\City;
 use App\Company;
 use App\Http\Controllers\Controller;
 
@@ -9,6 +10,7 @@ use App\Worker;
 use Carbon\Carbon;
 use Doctrine\Inflector\Language as InflectorLanguage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
 use JetBrains\PhpStorm\Language;
 
@@ -31,7 +33,13 @@ class WorkerController extends Controller
      */
     public function create()
     {
-        return view('admin-dashbord.worker.create')->with('companys',Company::get());
+        return view('admin-dashbord.worker.create')->with('governments',City::where('parent_id',0)->get())->with('companys',Company::get());
+    }
+
+    public function get_state(Request $request)
+    {
+        $state = City::where('parent_id',$request->parent)->get();
+        return $state;
     }
 
     /**
@@ -57,6 +65,8 @@ class WorkerController extends Controller
         $worker->weight = $request->weight;
         $worker->height  = $request->height ;
         $worker->skin_colour = $request->skin_colour;
+        $worker->governorate_id = $request->governorate_id;
+        $worker->state_id = $request->state_id;
 
         $worker->degree = $request->degree;
         $worker->salary  = $request->salary ;
@@ -76,6 +86,7 @@ class WorkerController extends Controller
         $worker->save();
         return redirect()->route('workers.index')->with(['success'=>'تم الاضافة بنجاح']);
     }
+    
 
     /**
      * Display the specified resource.
@@ -96,7 +107,9 @@ class WorkerController extends Controller
      */
     public function edit($id)
     {
-        return view('admin-dashbord.worker.edit')->with('work',Worker::find($id))->with('companys',Company::get());
+        $work = Worker::find($id);
+        $states =City::where('parent_id',$work->governorate_id)->get();
+        return view('admin-dashbord.worker.edit')->with('governments',City::where('parent_id',0)->get())->with('work',$work)->with('states',$states)->with('companys',Company::get());
 
     }
 
@@ -123,7 +136,8 @@ class WorkerController extends Controller
         $worker->weight = $request->weight;
         $worker->height  = $request->height ;
         $worker->skin_colour = $request->skin_colour;
-
+        $worker->governorate_id = $request->governorate_id;
+        $worker->state_id = $request->state_id;
         $worker->degree = $request->degree;
         $worker->salary  = $request->salary ;
         

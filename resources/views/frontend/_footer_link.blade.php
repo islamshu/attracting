@@ -5,6 +5,9 @@ integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amn
 <script src="{{ asset('front/libs/WOW-master/WOW-master/dist/wow.min.js') }}"></script>
 <script src="{{ asset('front/js/script.js') }}"></script>
 <script src="{{ asset('front/js/ServicesDetails.js') }}"></script>
+@toastr_js
+@toastr_render
+@yield('scripts')
 <script>
     $("#send_letter").click(function() {
         var email = $('#emailletter').val();

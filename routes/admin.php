@@ -20,6 +20,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function ()
     Route::resource('workers', 'WorkerController');
     Route::resource('how_its_work','WorkController');
     Route::resource('pages','PageController');
+    Route::resource('orders','OrderController');
 
     Route::get('company-update', 'CompanyController@change_status')->name('company.update.status');
     Route::get('slider-update', 'SliderController@change_status')->name('slider.update.status');

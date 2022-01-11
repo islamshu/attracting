@@ -30,6 +30,17 @@
             </li>
           </ul>
         </li>
+        <li class=" nav-item"><a href="index.html"><i class="la la-home"></i><span class="menu-title" data-i18n="nav.dash.main"> الشركات</span></a>
+          <ul class="menu-content">
+            <li><a class="menu-item" href="{{ route('company.index') }}" data-i18n="nav.dash.ecommerce">جميع الشركات</a>
+            </li>
+            <li ><a class="menu-item" href="{{ route('company.create') }}" data-i18n="nav.dash.crypto">اضف جديد</a>
+            </li>
+          </ul>
+        </li>
+        <li class=" nav-item"><a href="{{ route('orders.index') }}"><i class="la la-home"></i><span class="menu-title" data-i18n="nav.dash.main"> الطلبات</span></a>
+          
+        </li>
         <li class=" nav-item"><a href="index.html"><i class="la la-home"></i><span class="menu-title" data-i18n="nav.dash.main"> الخادمات</span></a>
           <ul class="menu-content">
             <li><a class="menu-item" href="{{ route('workers.index') }}" data-i18n="nav.dash.ecommerce">جميع الخادمات</a>

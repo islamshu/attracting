@@ -13,7 +13,7 @@ class CompanyController extends Controller
      }
      public function post_login(Request $request){
         if(Auth::guard('company')->attempt($request->only('email','password'),$request->filled('remember'))){
-            return redirect()->route('company.dashboard');            
+            return redirect()->route('company.dashboard.dash');            
         }
         return redirect()->back()->with(['error'=>'login faild']);
     }
@@ -21,4 +21,13 @@ class CompanyController extends Controller
     {
       return view('admin-dashbord.index');
     }
+    public  function company_dashboard()
+    {
+      return view('company-dashbord.index');
+    }
+    public  function workers()
+    {
+      return view('company-dashbord.index');
+    }
+
 }

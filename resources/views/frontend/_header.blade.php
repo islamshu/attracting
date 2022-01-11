@@ -68,18 +68,34 @@
         <i class="far fa-search"></i>
         <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
       </form> --}}
-
+      @guest
             <div class="btns">
-                <a href="#" class="btn login">{{ __('login') }}</a>
+                
+                <a href="{{ route('get_login') }}" class="btn login">{{ __('login') }}</a>
                 <a href="#" class="btn signup">{{ 'sign up' }}</a>
+            </div>
+            @else
+
+                <div class="dropdown">
+                    <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+                      <img src="{{ asset('front/user_image.png') }}" width="30" height="30" alt="">
+                      </a>
+                  
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="{{ route('user.dashboard') }}">{{ __('Dashbord') }}</a>
+                      <a class="dropdown-item" href="{{ route('logout_user') }}">{{ __('logout') }}</a>
+                    </div>
+                  </div>
+                @endguest
+                
                 @php
                     $lang = app()->getLocale();
                 @endphp
                 
 
             </div>
-            <a style="display: inline-flex" @if ($lang == 'ar') href="{{ route('change-lang', 'en') }}" @else href="{{ route('change-lang', 'ar') }}" @endif> 
-              <i class="fa fa-globe fa-2x "aria-hidden="true"></i>{{ $lang == 'ar' ? 'EN' : 'AR' }}
+            <a style="display: inline-flex;font-size: 20px;" @if ($lang == 'ar') href="{{ route('change-lang', 'en') }}" @else href="{{ route('change-lang', 'ar') }}" @endif> 
+             {{ $lang == 'ar' ? 'EN' : 'AR' }}
             </a>
 
         </div>

@@ -1,0 +1,220 @@
+
+
+@import url(style.css);
+
+
+
+
+
+
+
+
+
+
+
+
+.main-content{
+    padding: 20px;
+    margin-left: 20px;
+
+}
+
+.main-content h3{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.mids-box .service-item{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position: relative;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: white;
+}
+
+.mids-box .img-box {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 26px;
+    position: relative;
+    left: unset;
+    }
+
+
+
+
+.service-item .fa-info-circle{
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    /* background-color: #007bff; */
+    padding: 3px;
+    color: #009888;
+    z-index: 3;
+    font-size: 32px;
+}
+
+
+.service-item .date{
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    padding: 3px;
+    z-index: 3;
+    font-size: 14px;
+    color: #494848;
+    border-radius: .5rem;
+    font-weight: 500;
+}
+
+.service-item:hover{
+    transform: scale(1.04);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.mids-box .img-box{
+    transition: all .5s;
+    transform: translateY(40px);
+}
+
+.service-item:hover .img-box{
+    transform: translateY(0);
+}
+
+.mids-box .img-box img{
+    width: 100%;
+    height: 100%;
+}
+
+.mids-box .body-box{
+    max-width: 92%;
+    margin: auto;
+    margin-bottom: 30px;
+    overflow: hidden;
+    transition: all .5s;
+    transform: translateY(40px);
+}
+
+.service-item:hover .body-box{
+    transform: translateY(0);
+}
+
+.mids-box .body-box h2{
+ color: var(--main-color);
+ margin-bottom: 10px;
+}
+
+.mids-box .body-box p{
+    color: #888;
+    margin-bottom: 40px;
+}
+
+.mids-box .body-box h5{
+    color: var(--second-color);
+    
+}
+
+
+.mids-box .body-box ul li{
+    margin: 5px;
+    margin-bottom: 0;
+}
+
+.mids-box .body-box ul li span{
+    display: block;
+    text-align: center;
+}
+
+.mids-box .body-box ul li span:first-child{
+    color: white;
+    width: 55px;
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 4px;
+
+}
+
+.body-box .age{
+    background-color: #bd2130;
+}
+
+.body-box .scountry{
+    background-color: #494848;
+}
+
+.body-box .salary{
+    background-color: #ffc107;
+}
+
+.body-box .state{
+    background-color: #17a2b8;
+}
+
+.bg-success,.btn-success{
+    background-color: var(--main-color) !important;
+}
+
+.bg-primary{
+    background-color: #51a2f8 !important;
+}
+
+.mids-box .body-box ul li span:last-child{
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+.mids-box .body-box .btns-go{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    transform: translateY(43px);
+    transition: all .5s;
+}
+
+.service-item:hover .btns-go{
+    transform: translateY(0);
+}
+
+.mids-box .body-box .btns-go a{
+    color: white;
+    width: 180px;
+    margin: 5px;
+}
+
+
+
+@media (max-width: 575.98px) {
+    .mids-box .body-box h2{
+        font-size: 20px;
+    }
+
+    .mids-box .body-box p{
+        font-size: 15px;
+    }
+
+    .mids-box .service-item{
+        margin-right: 20px;
+    }
+
+    .main-content h3{
+        font-size: 16px;
+    }
+}
+
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .mids-box .body-box h2{
+        font-size: 22px;
+    }
+
+    .mids-box .body-box p{
+        font-size: 18px;
+    }
+ } 

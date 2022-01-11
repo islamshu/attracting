@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |->name('v3.')
 */
 Route::group(['namespace' => 'Company', 'middleware' => 'auth:company'], function () {
-    Route::get('/','CompanyController@dashboard')->name('dashboard');    
+    Route::get('/','CompanyController@dashboard')->name('company.dashboard.dash');    
 });
-
 
 Route::group(['namespace' => 'Company', 'middleware' => 'guest:company'], function () {
     Route::get('login', 'CompanyController@get_login')->name('get_login');

@@ -1,0 +1,68 @@
+
+@import url(style.css);
+
+
+.content-main{
+    padding: 20px;
+}
+
+.content-main h3{
+    text-transform: capitalize;
+    color: black;
+    font-size: 22px;
+    margin-left: 20px;
+}
+
+
+.invoice-box{
+    padding: 20px;
+    border-radius: .5rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-left:20px;
+    margin-right: 20px;
+    margin-top: 30px;
+    background-color: white;
+}
+
+.invoice-box h5{
+    text-transform: uppercase;
+    color: #009888;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.invoice-box p{
+    text-transform: capitalize;
+    color: #666;
+    font-size: 14px;
+
+}
+
+thead th ,tbody th{
+    font-weight: 500;
+}
+
+
+@media (max-width:767px){
+
+    .content-main h3{
+        font-size: 16px;
+    }
+
+    .invoice-box{
+        overflow:scroll;
+    }
+
+    .invoice-box h5{
+        font-size: 14px;
+    }
+
+    .invoice-box p{
+        font-size: 12px;
+    }
+
+    .table td, .table th{
+        font-size: 12px;
+    }
+    
+}

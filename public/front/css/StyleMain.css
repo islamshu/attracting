@@ -124,7 +124,7 @@ form .fa-search {
 
 .dropdown {
     display: inline-block;
-    width: 40px;
+    width: 70px;
 }
 
 .dropdown-toggle::after {
@@ -984,13 +984,13 @@ form .fa-search {
 .footer {
     background-color: var(--second-color);
     color: white;
-    padding-top: 140px;
+    padding-top: 200px;
     position: relative;
 }
 
 .footer .newsletter {
     position: absolute;
-    top: -60px;
+    top: -10px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     color: var(--second-color);

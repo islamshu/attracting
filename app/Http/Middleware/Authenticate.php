@@ -26,9 +26,10 @@ class Authenticate extends Middleware
             
       
                 return route('company.get_login');
-            }
-            
-            return route('login');
+            } else {   
+        toastr()->success(trans('you need to login')); 
+      return  redirect()->back()->getTargetUrl();
+        }
         }
     }
 }

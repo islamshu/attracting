@@ -60,6 +60,23 @@
                                                 @endforeach
                                             </select>
                                         </div>
+                                        <div class="col-md-6">
+                                            <br><label> المحافظة </label>
+                                            <select required class="selectpicker form-control" name="governorate_id" id="governorate_id" data-live-search="true">
+                                                <option  value="" selected disabled>اختر المحافظة</option>
+
+                                                @foreach ($governments as $item)
+                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <br><label> الولاية </label>
+                                            <select required class=" form-control" id="state_id" name="state_id" >
+                                                <option value="" selected disabled >اختر الولاية</option>
+                                                
+                                            </select>
+                                        </div>
                                        
                                         <div class="col-md-4">
                                             <br><label>تاريخ الميلاد  *</label>
@@ -179,7 +196,7 @@
                                         <input type="file" name="image[]" required class="form-control">
                                         <div class="input-group-btn"> 
 
-                                          <button style="margin-right: 20px;" class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
+                                          <button style="margin-right: 20px;" class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>اضافة المزيد</button>
                                         </div>
                                       </div>
                                     </div>
@@ -188,7 +205,7 @@
                                         <div class="control-group input-group" style="margin-top:10px">
                                           <input type="file" name="image[]" class="form-control">
                                           <div class="input-group-btn"> 
-                                            <button  style="margin-right: 20px;" class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+                                            <button  style="margin-right: 20px;" class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> حذف</button>
                                           </div>
                                         </div>
                                       </div>
@@ -213,8 +230,34 @@
 
 @endsection
 @section('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
+        $('#governorate_id').change(function() {
+           let parent = $(this).val();
+
+           $.ajax({
+            url: '{{ route('get_state') }}',
+            type: 'post',
+            dataType: 'html',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                parent: parent
+            },
+            success: function(data) {
+                var jsonData = data;
+                var obj = JSON.parse(jsonData);
+                $('#state_id').html(new Option('اختر الولاية', ''));
+                for (i in obj) {
+                    
+            $('#state_id').append(new Option(obj[i].name, obj[i].id));
+            }
+            }
+
+
+        });
+        });
       $(".btn-success").click(function(){ 
           var html = $(".clone").html();
           $(".increment").after(html);

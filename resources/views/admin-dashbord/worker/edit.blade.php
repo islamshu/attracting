@@ -64,6 +64,28 @@
                                                 @endforeach
                                             </select>
                                         </div>
+                                        <div class="col-md-6">
+                                            <br><label> المحافظة </label>
+                                            <select required class="selectpicker form-control" name="governorate_id" id="governorate_id" data-live-search="true">
+                                                <option  value=""  disabled>اختر المحافظة</option>
+
+                                                @foreach ($governments as $item)
+                                                <option value="{{ $item->id }}" @if ($work->governorate_id == $item->id) selected @endif>{{ $item->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <br><label> الولاية </label>
+                                           
+                                            <select required class=" form-control" id="state_id" name="state_id" >
+                                                <option value=""  disabled >اختر الولاية</option>
+                                                @foreach ($states as $state)
+
+                                                <option value="{{ $state->id }}" @if ($work->state_id == $state->id) selected @endif>{{ $state->name }}</option>
+                                                @endforeach
+                                                
+                                            </select>
+                                        </div>
 
                                         <div class="col-md-4">
                                             <br><label>تاريخ الميلاد *</label>
@@ -251,6 +273,30 @@
 @section('script')
     <script type="text/javascript">
         $(document).ready(function() {
+            $('#governorate_id').change(function() {
+           let parent = $(this).val();
+
+           $.ajax({
+            url: '{{ route('get_state') }}',
+            type: 'post',
+            dataType: 'html',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                parent: parent
+            },
+            success: function(data) {
+                var jsonData = data;
+                var obj = JSON.parse(jsonData);
+                $('#state_id').html(new Option('اختر الولاية', ''));
+                for (i in obj) {
+                    
+            $('#state_id').append(new Option(obj[i].name, obj[i].id));
+            }
+            }
+
+
+        });
+        });
             $(".btn-success").click(function() {
                 var html = $(".clone").html();
                 $(".increment").after(html);

@@ -31,7 +31,14 @@
                         </ul>
                         <div class="btns-go">
                             <a href="{{ route('get_single_work',encrypt($item->id)) }}" class="btn bg-primary">{{ __('details') }}</a>
-                            <a href="#" class="btn bg-success">{{ __('book') }}</a>
+                            <form action="{{ route('booking.user') }}" method="post">
+                                <input type="hidden" name="worker_id" value="{{ encrypt($item->id) }}">
+
+                                @csrf
+                                <button style="    color: white;
+                                width: 130px;
+                                margin: 5px;" type="submit" class="btn bg-success"  >{{ __('Book Now') }}</button>
+                                </form>
                         </div>
                     </div>
                 </div>
@@ -39,6 +46,6 @@
             @endforeach
 
         </div>
-        <a href="filter.html" class="btn btn-success mt-4">{{ __('Show More') }}</a>
+        <a href="{{ route('fillter') }}" class="btn btn-success mt-4">{{ __('Show More') }}</a>
     </div>
 </div>

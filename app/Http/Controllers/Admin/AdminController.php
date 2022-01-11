@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Admin;
+use App\Booking;
 use Illuminate\Http\Request;
 use Auth;
 class AdminController extends Controller
@@ -20,4 +21,5 @@ class AdminController extends Controller
   {
     return view('admin-dashbord.index');
   }
+
 }

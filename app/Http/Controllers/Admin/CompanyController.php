@@ -69,6 +69,11 @@ class CompanyController extends Controller
     {
         //
     }
+    public function dashboard()
+    {
+        return view('company-dashbord.company.index');
+    }
+    
 
     /**
      * Show the form for editing the specified resource.

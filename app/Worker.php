@@ -19,4 +19,13 @@ class Worker extends Model
     {
         return $this->belongsTo(Company::class, 'company_id');
     }
+    public function state ()
+    {
+        return $this->belongsTo(City::class, 'state_id');
+    }
+    public function govermint ()
+    {
+        return $this->belongsTo(City::class, 'governorate_id');
+    }
+
 }

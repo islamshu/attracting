@@ -1,8 +1,9 @@
 <?php
 
+use App\Booking;
 use App\General;
-
-
+use App\Worker;
+use Carbon\Carbon;
 
 function get_general_value($key)
 {
@@ -12,6 +13,25 @@ function get_general_value($key)
     }
 
     return '';
+}
+
+
+function approve_show($id)
+{
+    $booking = Booking::where('user_id',auth()->id())->where('worker_id',$id)->orderBy('id', 'desc')->first();
+    if($booking){
+        if($booking->status == 1){
+
+        
+        if(Carbon::now() > $booking->finish_at ){
+            return 0;
+        }elseif(Carbon::now() <= $booking->finish_at  && Carbon::now()  >=  $booking->start_at){ 
+                return 1;
+        }
+    }else{
+        return 0;
+    }
+    }
 }
 function get_language()
 {
@@ -412,6 +432,78 @@ function get_natonalty()
         'ZW' => 'Zimbabwe'
     );
     return $natonalty;
+}
+function get_status_worker($item)
+{
+    $stats = $item->status;
+    if($stats == 1){
+        return trans('Under proccess');
+    }elseif($stats == 2){
+        return trans('Booked Now');
+    }elseif($stats == 0){
+        return trans('Not Booked');
+    }
+}
+function get_status_worker_all($item)
+{
+    $stats = $item->status;
+    if($stats == 1){
+        return trans('Under proccess');
+    }elseif($stats == 2){
+        return trans('Booked Now');
+    }elseif($stats == 0){
+        return trans('avalable');
+    }
+}
+function get_status_booking($item)
+{
+    $stats = $item->status;
+    if($stats == 1){
+        return trans('under proccess');
+    }elseif($stats == 2){
+        return trans('Booked Now');
+    }elseif($stats == 0){
+        return trans('cancelled');
+    }
+}
+function get_price($item)
+{
+    $salary = Worker::find($item)->salary;
+    
+    $type =     get_general_value('commission_type');
+   $value = get_general_value('commission_value');
+   if($type == 'constant'){
+       $price = $value;
+
+   }elseif($type == 'percentage'){
+       $price = ((int)$value * $salary)/100 ;
+   
+
+   }
+   return $price;
+
+
+}
+function get_button_booking($item)
+{
+    $stats = $item->status;
+    if($stats == 1){
+        return 'warning';
+    }elseif($stats == 2){
+        return 'info';
+    }elseif($stats == 0){
+        return 'dark';
+    }
+}function get_button_booking_all($item)
+{
+    $stats = $item->status;
+    if($stats == 1){
+        return 'warning';
+    }elseif($stats == 2){
+        return 'info';
+    }elseif($stats == 0){
+        return 'success';
+    }
 }
 function get_status($item)
 {
