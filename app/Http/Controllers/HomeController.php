@@ -28,6 +28,7 @@ class HomeController extends Controller
         })->inRandomOrder(6)->get();
         $how_works = Work::orderBy('order','asc')->get();
         $statstic = Statistic::first();
+        
     
         
        return view('frontend.index',compact('sliders','fetures','workers','services','how_works','statstic'));

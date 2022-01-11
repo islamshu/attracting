@@ -72,8 +72,15 @@
             <div class="btns">
                 
                 <a href="{{ route('get_login') }}" class="btn login">{{ __('login') }}</a>
-                <a href="#" class="btn signup">{{ 'sign up' }}</a>
-            </div>
+                <div class="dropdown">
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      {{ __('Register') }}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="{{ route('get_register') }}">{{ __('User Register') }}</a>
+                      <a class="dropdown-item" href="{{ route('get_register_company') }}">{{ __('Company Register') }}</a>
+                    </div>
+                  </div>            </div>
             @else
 
                 <div class="dropdown">
