@@ -32,6 +32,7 @@ Route::middleware('lang')->group(function () {
     Route::get('error_thawani','ThawaniController@errorUrl')->name('thawani.cancel');
     Route::get('send_message','SendMessageController@create')->name('user.message');
     Route::post('send_message','SendMessageController@store')->name('post_message');
+    Route::get('approve/{id}','BookingController@approve')->name('approve.booking');
 
     
     Route::get('user-dashboard','UserController@dashboard');

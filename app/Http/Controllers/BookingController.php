@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Booking;
+use App\Worker;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -15,6 +16,15 @@ class BookingController extends Controller
     public function index()
     {
         //
+    }
+    public function approve($id){
+        $booking = Booking::find($id);
+        $worker = Worker::find($booking->worker->id);
+        $worker->status = "2";
+        $worker->save();
+        $booking->status = 2;
+        $booking->save();
+        return redirect()->back()->with(['success'=>'تم التأكيد']);
     }
 
     /**

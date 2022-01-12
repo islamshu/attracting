@@ -61,6 +61,7 @@
                                       
 
                                         <td>
+                                            <a class="btn btn-info" href="{{ route('approve.booking',$order->id) }}">تأكيد الحجز</a>
                                             <a href="{{ route('company.orders.show', $order->id) }}"
                                                 class="btn btn-icon btn-primary mr-1"> <i
                                                     class="la la-eye"></i></a>
