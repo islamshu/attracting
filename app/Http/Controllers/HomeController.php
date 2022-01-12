@@ -107,6 +107,6 @@ class HomeController extends Controller
         
         $workers = $query->paginate(8);
         
-        return view('frontend._fillter',compact('goverments','workers','request',));
+        return view('frontend._fillter',compact('goverments','workers','request'));
     }
 }
