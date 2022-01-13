@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('front/libs/fontawesome-pro-5.14.0-web/css/all.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="{{ asset('front/libs/WOW-master/WOW-master/css/libs/animate.css') }}" />
+    <base href="/">
 @if(app()->getLocale() =='en')
     <link rel="stylesheet" href="{{ asset('front/css/StyleMain.css') }}">
     @else
