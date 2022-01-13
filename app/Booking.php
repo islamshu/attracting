@@ -14,10 +14,10 @@ class Booking extends Model
      */
     public function worker()
     {
-        return $this->belongsTo(Worker::class, 'worker_id',);
+        return $this->belongsTo(Worker::class, 'worker_id');
     }
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id',);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
