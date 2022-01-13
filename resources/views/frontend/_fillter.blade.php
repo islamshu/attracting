@@ -116,9 +116,10 @@
 
                         <section class="range-slider col-lg-6 col-md-6 col-sm-12">
                             <br>
-                            <span class="rangeValues"></span>
+                           
                             <input class="form-control" name="min_price" onchange="filter()" value="{{ $request->min_price ? $request->min_price : 0}}" min="0" max="600" step="1" type="range">
                             <input class="form-control" name="max_price" onchange="filter()" value="{{  $request->max_price ? $request->max_price : 600 }}" min="0" max="600" step="1" type="range">
+                            <span class="rangeValues"></span>
                         </section>
                         <button type="button" class="btn btn-warning" id="clear_data"> Clear</button>
 
