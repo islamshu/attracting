@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('front/libs/WOW-master/WOW-master/css/libs/animate.css') }}" />
     <base href="/">
 @if(app()->getLocale() =='en')
-    <link   href="{{ asset('front/css/StyleMain.css') }}">
+    <link rel="stylesheet"  href="{{ asset('front/css/StyleMain.css') }}">
     @else
     <link rel="stylesheet"  href="{{ asset('front/css/StyleMainAr.css') }}">
     @endif
