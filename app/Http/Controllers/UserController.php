@@ -7,6 +7,7 @@ use App\Company;
 use App\Mail\ComapnyMail;
 use App\Mail\UserMail;
 use App\User;
+use App\Work;
 use App\Worker;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -78,6 +79,10 @@ class UserController extends Controller
         // dd($request->all());
         $booking = new  Booking();
         $worker_id = decrypt($request->worker_id);
+        $woo = Worker::find($worker_id);
+        if($woo->status == '0'){
+
+        
         $booking->worker_id =  $worker_id;
         $booking->user_id = auth()->id();
         $booking->start_at = Carbon::now()->format('Y-m-d');
@@ -89,6 +94,12 @@ class UserController extends Controller
         $thawani = new ThawaniController;
         // $ddddd= session()->put('student_id', $st->id);
         return $thawani->thawani($request,$booking);
+
+    }else{
+        toastr()->success(trans('The worker is not avaliable')); 
+        return  redirect()->back()->getTargetUrl();
+    }
+    }
 
 
 

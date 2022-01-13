@@ -19,12 +19,19 @@ class BookingController extends Controller
     }
     public function approve($id){
         $booking = Booking::find($id);
+        
         $worker = Worker::find($booking->worker->id);
+        
+
+       
         $worker->status = "2";
         $worker->save();
         $booking->status = 2;
         $booking->save();
         return redirect()->back()->with(['success'=>'تم التأكيد']);
+
+         
+   
     }
 
     /**
