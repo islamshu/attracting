@@ -97,8 +97,7 @@ class UserController extends Controller
 
     }else{
         toastr()->success(trans('The worker is not avaliable')); 
-        return  redirect()->back()->getTargetUrl();
-    }
+        return  redirect()->back();
     }
 
     public function dashboard(){
