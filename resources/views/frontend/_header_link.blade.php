@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="{{ asset('front/libs/WOW-master/WOW-master/css/libs/animate.css') }}" />
     <base href="/">
 @if(app()->getLocale() =='en')
-    <link rel="stylesheet" href="{{ asset('front/css/StyleMain.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/css/StyleMain.css') }}">
     @else
-    <link rel="stylesheet" href="{{ asset('front/css/StyleMainAr.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/css/StyleMainAr.css') }}">
     @endif
     {{-- <script src="https://unpkg.com/jquery@2.2.4/dist/jquery.js"></script> --}}
     <link href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     @toastr_css
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
