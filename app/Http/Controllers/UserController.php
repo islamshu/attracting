@@ -99,6 +99,7 @@ class UserController extends Controller
         toastr()->success(trans('The worker is not avaliable')); 
         return  redirect()->back();
     }
+    }
 
     public function dashboard(){
         $booking = Booking::where('user_id',auth()->id())->where('finish_at','>',Carbon::now())->orWhere('status',2)->get();
