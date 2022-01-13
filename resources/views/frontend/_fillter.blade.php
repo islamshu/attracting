@@ -171,7 +171,14 @@
                                         <div class="btns-go">
                                             <a href="{{ route('get_single_work', encrypt($item->id)) }}"
                                                 class="btn bg-primary">{{ __('details') }}</a>
-                                            <a href="#" class="btn bg-success">{{ __('book') }}</a>
+                                                <form action="{{ route('booking.user') }}" method="post">
+                                                    <input type="hidden" name="worker_id" value="{{ encrypt($item->id) }}">
+                    
+                                                    @csrf
+                                                    <button style="    color: white;
+                                                    width: 130px;
+                                                    margin: 5px;" type="submit" class="btn bg-success"  >{{ __('Book Now') }}</button>
+                                                    </form>
                                         </div>
                                     </div>
                                 </div>
