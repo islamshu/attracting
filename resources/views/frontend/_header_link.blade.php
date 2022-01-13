@@ -14,7 +14,7 @@
 @if(app()->getLocale() =='en')
     <link rel="stylesheet"  href="{{ asset('front/css/StyleMain.css') }}">
     @else
-    <link rel="stylesheet"  href="{{ asset('front/css/StyleMainAr.css') }}">
+    <link rel="stylesheet"  href="{{ asset('front/css/StyleMainAR.css') }}">
     @endif
     {{-- <script src="https://unpkg.com/jquery@2.2.4/dist/jquery.js"></script> --}}
     <link href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" />
