@@ -1,6 +1,5 @@
 {
     "login": "login",
-    "sign up": "sign up",
     "what we do": "what we do",
     "our services": "our services",
     "Book your maid now": "Book your maid now",
@@ -13,7 +12,6 @@
     "fourth box": "fourth box",
     "newsletter": "newsletter",
     "letter description": "letter description",
-    "Send": "Send",
     "Subscribe Now": "Subscribe Now",
     "quick links": "quick links",
     "more": "more",
@@ -23,7 +21,6 @@
     "Home": "Home",
     "Done successfully": "Done successfully",
     "Already registered": "Already registered",
-    "step": "step",
     "login successfuly": "login successfuly",
 
 
