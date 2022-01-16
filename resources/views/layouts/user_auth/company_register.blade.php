@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="sign-up">
-                        <h3>Create Company Account</h3>
+                        <h3>{{ __('Create Company Account') }}</h3>
                        
                         @include('inc.alerts.error')
                         @include('inc.alerts.success')
@@ -33,7 +33,7 @@
                             <input type="email" name="email" value="{{ old('email') }}" class="form-control mb-2" placeholder="{{ __('email') }}">
                             <input type="text" name="phone" value="{{ old('phone') }}" class="form-control mb-2" placeholder="{{ __('phone') }}">
                             <input type="text" name="address" value="{{ old('address') }}" class="form-control mb-2" placeholder="{{ __('address') }}">
-                            <input type="file" name="commercial_register" value="{{ old('commercial_register') }}" class="form-control mb-2" placeholder="{{ __('commercial_register') }}">
+                            <input type="file" name="commercial_register" value="{{ old('commercial_register') }}" class="form-control mb-2" placeholder="{{ __('commercial register') }}">
 
                             <input type="password" name="password" class="form-control mb-2" placeholder="{{ __('password') }}">
                             <input type="password" name="password_confirm" class="form-control mb-2" placeholder="{{ __('password confirm') }}">
@@ -47,8 +47,7 @@
     
                 <div class="col-lg-5">
                     <div class="sign-in">
-                        <h3>welcome back.</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elitsit amet consectetur</p>
+                        <h3>{{ __('welcome back.') }}</h3>
                         <a href="{{ route('get_login') }}" class="btn">{{ __('Sign in') }}</a>
                         <div class="overlay"></div>
                     </div>

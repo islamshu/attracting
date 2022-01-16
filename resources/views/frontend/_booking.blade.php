@@ -12,7 +12,7 @@
             
             <div class="col-lg-4 col-sm-6  rounded text-center">
                 <div class="service-item wow animate__fadeInUp" data-wow-delay=".7s">
-                    <span class="available">available</span>
+                    <span class="available">{{ get_status_worker_all($item) }}</span>
                     <div class="img-box">
                         @php
                          $image =    json_decode($item->image);

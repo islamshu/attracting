@@ -58,19 +58,19 @@
     <div class="container">
         <div class="main-filter">
 
-            <h2 class="title wow animate__fadeInUp" data-wow-delay=".7s">search for mids </h2>
+            <h2 class="title wow animate__fadeInUp" data-wow-delay=".7s">{{ __('search for mids') }} </h2>
 
             <div class="filter rounded wow animate__fadeInUp" data-wow-delay=".7s">
                 <div class="row">
 
                     <form class="form-inline Search my-2 my-lg-0 col-lg-12  col-md-12 col-sm-12" action="" id="search-form">
                         <input class="form-control mr-sm-2" type="search" name="title" value="{{ $request->title }}" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+                        <button class="btn btn-info my-2 my-sm-0" type="submit">{{ __('Search') }}</button>
 
                         <div class="select-items col-lg-6 col-md-6 col-sm-12">
 
                             <select class="select form-control m-2"  name="governorate_id" id="governorate_id">
-                                <option value="" selected disabled">اختر المحافظة</option>
+                                <option value="" selected disabled>{{ __('Chose Governorate') }}</option>
                                 @foreach ($goverments as $item)
                                     <option value="{{ $item->id }}" @if($request->governorate_id == $item->id) selected @endif >{{ $item->name }}</option>
                                 @endforeach
@@ -78,7 +78,7 @@
                             </select>
 
                             <select class="select form-control m-2" onchange="filter()" id="state_id" name="state_id">
-                                <option value="" selected disabled>اختر الولاية</option>
+                                <option value="" selected disabled>{{ __('Chose State') }}</option>
                                 @forelse (\App\City::where('parent_id',$request->governorate_id)->get() as $item)
                                 <option value="{{ $item->id }}" @if($request->state_id == $item->id) selected @endif >{{ $item->name }}</option>
     
@@ -94,25 +94,25 @@
                         <div class="select-items col-lg-6 col-md-6 col-sm-12" >
                             <select class="select form-control m-2" onchange="filter()" name="states">
 
-                                <option value="0"  selected >اختر الحالة الإجتماعية</option>
-                                <option value="1" {{ $request->states == 1 ? 'selected': "" }}>عزباء</option>
-                                <option value="2" {{ $request->states == 2 ? 'selected': "" }} >متزوجة</option>
-                                <option value="3" {{ $request->states == 3 ? 'selected': "" }} >مطلقة</option>
-                                <option value="4" {{ $request->states == 4 ? 'selected': "" }} >أرملة</option>
+                                <option value="0"  selected >{{ __('Choose marital status') }}</option>
+                                <option value="1" {{ $request->states == 1 ? 'selected': "" }}>{{ __('single') }}</option>
+                                <option value="2" {{ $request->states == 2 ? 'selected': "" }} >{{ __('married') }}</option>
+                                <option value="3" {{ $request->states == 3 ? 'selected': "" }} >{{ __('Divorced') }}</option>
+                                <option value="4" {{ $request->states == 4 ? 'selected': "" }} >{{ __('widow') }}</option>
                             </select>
 
                             <select class="select form-control m-2" onchange="filter()" name="learn">
-                                <option value="0" selected >المستوى التعليمي </option>
-                                <option value="1" @if($request->learn == 1) selected @endif>غير متعلم</option>
-                                <option value="2" @if($request->learn == 2) selected @endif>ابتدائي</option>
-                                <option value="3" @if($request->learn == 3) selected @endif>اعدادي</option>
-                                <option value="5" @if($request->learn == 5) selected @endif>ثانوي</option>
-                                <option value="5" @if($request->learn == 5) selected @endif>جامعي</option>
-                                <option value="6" @if($request->learn == 6) selected @endif>مؤهلات عليا</option>
+                                <option value="0" selected >{{ __('Educational level') }}</option>
+                                <option value="1" @if($request->learn == 1) selected @endif>{{ __('uneducated') }}</option>
+                                <option value="2" @if($request->learn == 2) selected @endif>{{ __('Primary stage') }}</option>
+                                <option value="3" @if($request->learn == 3) selected @endif>{{ __('middle School') }}</option>
+                                <option value="5" @if($request->learn == 5) selected @endif>{{ __('secondary stage') }}</option>
+                                <option value="5" @if($request->learn == 5) selected @endif>{{ __('university') }}</option>
+                                <option value="6" @if($request->learn == 6) selected @endif>{{ __('higher qualifications') }}</option>
                             </select>
 
                         </div>
-                        <label for=""> Range price :</label>
+                        <label for=""> {{ __('Range price') }} :</label>
                         <br>
                         <span class="rangeValues"></span>
 
@@ -122,7 +122,7 @@
                             <input class="form-control" name="min_price" onchange="filter()" value="{{ $request->min_price ? $request->min_price : 0}}" min="0" max="600" step="1" type="range">
                             <input class="form-control" name="max_price" onchange="filter()" value="{{  $request->max_price ? $request->max_price : 600 }}" min="0" max="600" step="1" type="range">
                         </section>
-                        <button type="button" class="btn btn-warning" id="clear_data"> Clear</button>
+                        <button type="button" class="btn btn-warning" id="clear_data"> {{ __('Clear') }}</button>
 
                     </form>
                 </div>
@@ -136,7 +136,7 @@
 
             <div class="services-items text-center">
                 <div class="container">
-                    <h2 class="results text-left wow animate__fadeInUp" data-wow-delay=".7s">results :</h2>
+                    <h2 class="results text-left wow animate__fadeInUp" data-wow-delay=".7s">{{ __('results') }} :</h2>
                     <div class="row justify-content-center">
 
                         @forelse  ($workers as $item)
@@ -184,7 +184,7 @@
                                 </div>
                             </div>
                             @empty
-                            <p>No Woker find</p>
+                            <p>{{ __('No Woker find') }}</p>
                         @endforelse
 
 

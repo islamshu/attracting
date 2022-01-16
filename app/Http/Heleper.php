@@ -452,7 +452,7 @@ function get_status_worker_all($item)
     }elseif($stats == 2){
         return trans('Booked Now');
     }elseif($stats == 0){
-        return trans('avalable');
+        return trans('Avalable');
     }
 }
 function get_status_booking($item)

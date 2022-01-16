@@ -11,9 +11,9 @@
 
     <div class="main-content">
 
-        <h3>orders page</h3>
+        <h3>{{ __('orders page') }}</h3>
         <!-- <p>some words to describe the page </p> -->
-        <span>{{ $booking->count() }} order</span>
+        <span>{{ $booking->count() }} {{ __('order') }}</span>
 
         <div class="content-sup">
             <div class="row">

@@ -10,7 +10,7 @@
 
 
     <div class="main-content">
-        <h3>my mids</h3>
+        <h3>{{ __('my mids') }}</h3>
     
         <div class="mids-box">
     

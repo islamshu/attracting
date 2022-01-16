@@ -30,7 +30,7 @@ class MenuController extends Controller
     }
     public function store(Request $request){
         $menu = new Menu();
-        $menu->title = ['ar'=>$request->titla_ar,'en'=>$request->title_en];
+        $menu->title = ['ar'=>$request->title_ar,'en'=>$request->title_en];
         $menu->url=$request->url;
         $menu->sort_id = Menu::count() +1 ;
         $menu->save();
@@ -43,7 +43,7 @@ class MenuController extends Controller
     public function update(Request $request,$id)
     {
         $menu = Menu::find($id);
-        $menu->title = ['ar'=>$request->titla_ar,'en'=>$request->title_en];
+        $menu->title = ['ar'=>$request->title_ar,'en'=>$request->title_en];
         $menu->url=$request->url;
         $menu->save();
         return redirect()->route('menu.index')->with(['success'=>'تم التعديل بنجاح']);

@@ -22,9 +22,8 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="sign-in">
-                        <h3>Sign in to Account</h3>
+                        <h3>{{ __('Sign in to Account') }}</h3>
                       
-                        <p>Lorem ipsum dolor sit amet consectetur </p>
                         @include('inc.alerts.error')
                         @include('inc.alerts.success')
                         <form method="post" action="{{ route('post_login') }}">
@@ -34,19 +33,18 @@
                             <input type="submit" class="btn d-block sign-btn clearfix" value="{{ __('login') }}">
 
                         </form>
-                        <a href="" class="forget">forget password</a>
+                        <a href="" class="forget">{{ __('forget password') }}</a>
     
                         <div class="info d-flex justify-content-center ">
-                            <a href="" >Privacy Policy</a>
-                            <a href="">Terms</a>
+                            <a href="{{ route('fron.page','privacy_policy') }}" >{{ __('Privacy Policy') }}</a>
+                            <a href="{{ route('fron.page','terms_of_use') }}">{{ __('Terms') }}</a>
                         </div>
                     </div>
                 </div>
     
                 <div class="col-lg-5">
                     <div class="sign-up">
-                        <h3>hello friends.</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur.</p>
+                        <h3>{{ __('hello friends.') }}</h3>
                         <a href="{{ route('get_register') }}" class="btn">{{ __('Sign Up') }}</a>
                         <div class="overlay"></div>
                     </div>
