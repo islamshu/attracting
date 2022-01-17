@@ -17,6 +17,7 @@ class SendMessageController extends Controller
         return view('admin-dashbord.send-message.index')->with('messages',SendMessage::orderBy('id','desc')->get());
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -51,9 +52,9 @@ class SendMessageController extends Controller
      * @param  \App\SendMessage  $sendMessage
      * @return \Illuminate\Http\Response
      */
-    public function show(SendMessage $sendMessage)
+    public function show($id)
     {
-        //
+        return view('admin-dashbord.send-message.show')->with('messages',SendMessage::find($id));
     }
 
     /**
