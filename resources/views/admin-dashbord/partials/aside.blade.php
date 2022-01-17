@@ -1,8 +1,15 @@
 <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true">
     <div class="main-menu-content">
       <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-        <li class=" nav-item"><a href="{{ route('generalinfo.index') }}"><i class="la la-cog"></i><span class="menu-title" data-i18n="nav.dash.main">الإعدادات العامة</span></a>
-         
+      
+
+        <li class=" nav-item"><a ><i class="la la-home"></i><span class="menu-title" data-i18n="nav.dash.main"> الإعدادات العامة</span></a>
+          <ul class="menu-content">
+            <li><a class="menu-item" href="{{ route('generalinfo.index') }}" data-i18n="nav.dash.ecommerce">اعدادات الموقع</a>
+            </li>
+            <li ><a class="menu-item" href="{{ route('generalinfo.paid') }}" data-i18n="nav.dash.crypto">اعدادات الدفع </a>
+            </li>
+          </ul>
         </li>
         <li class=" nav-item"><a ><i class="la la-home"></i><span class="menu-title" data-i18n="nav.dash.main"> القوائم</span></a>
           <ul class="menu-content">

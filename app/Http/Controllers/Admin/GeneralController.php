@@ -13,6 +13,10 @@ class GeneralController extends Controller
     {
         return view('admin-dashbord.general.index');
     }
+    public function paid()
+    {
+        return view('admin-dashbord.general.paid');
+    }
 
   
     public function store(Request $request)
