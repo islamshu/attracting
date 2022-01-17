@@ -46,6 +46,8 @@
                                     <th>مكتب العمل </th>
                                     <th> اسم مالك العمل </th>
                                     <th> الحالة </th>
+                                    <th>تفعيل / الغاء التفعيل</th>
+
                                     <th>الإجرائات</th>
                                 </tr>
                             </thead>
@@ -62,8 +64,13 @@
                                         <td>
                                             {{ get_status_worker($work) }}
                                         </td>
-
                                         <td>
+                                            <input type="checkbox" data-id="{{ $work->id }}" name="status" class="js-switch" {{ $work->is_show == 1 ? 'checked' : '' }}>
+                                            </td>
+                                        <td>
+                                            <a target="_blank" href=" {{ route('get_single_work',encrypt($work->id)) }}"
+                                                class="btn btn-icon btn-info mr-1"> <i
+                                                    class="la la-eye"></i></a>
                                             <a href="{{ route('company.workers.edit', $work->id) }}"
                                                 class="btn btn-icon btn-primary mr-1"> <i
                                                     class="la la-edit"></i></a>
@@ -85,4 +92,23 @@
         </div>
     </div>
 </section>
+@endsection
+@section('script')
+<script>
+    $(document).ready(function(){
+    $('.js-switch').change(function () {
+        let status = $(this).prop('checked') === true ? 1 : 0;
+        let id = $(this).data('id');
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: '{{ route('company.wroker.update_status') }}',
+            data: {'status': status, 'id': id},
+            success: function (data) {
+                console.log(data.message);
+            }
+        });
+    });
+});
+</script>
 @endsection

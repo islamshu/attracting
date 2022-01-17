@@ -51,6 +51,8 @@ Route::middleware('lang')->group(function () {
         Route::resource('workers', 'WorkerController');
         Route::resource('orders', 'OrderController');
         Route::get('logout', 'WorkerController@logout_company')->name('logout');
+        Route::get('worker_status','WorkerController@update_status')->name('wroker.update_status');
+
 
     });
 
