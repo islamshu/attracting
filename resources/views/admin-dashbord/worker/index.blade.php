@@ -60,7 +60,7 @@
                                         <td>{{ $work->company->company_name }}</td>
                                         <td>{{ $work->company->owner_name }}</td>
                                         <td>
-                                            {{ $work->status }}
+                                            {{ get_status_worker_all($work)  }}
                                         </td>
 
                                         <td>
