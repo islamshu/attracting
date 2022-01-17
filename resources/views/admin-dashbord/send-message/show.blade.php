@@ -59,7 +59,9 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <br><label> الرسالة </label>
-                                            <input type="text" class="form-control" readonly  required value="{{ $message->message  }}">
+                                            <textarea name="" class="form-control" cols="30" rows="10">
+                                                {!! $message->message !!}
+                                            </textarea>
                                         </div>  
                                     </div>
                                         
