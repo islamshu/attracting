@@ -78,18 +78,19 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="userinput4"> السجل التجاري</label>
-                                               <a target="_blank" href="{{ asset('uploads/'.$company->commercial_register) }}"> اضغط للمشاهدة</a>
-                                            </div>
-                                        </div>
+                                       
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="userinput4"> عنوان الشركة </label>
                                                 <input type="text" readonly id="userinput4" value="{{$company->address}}"
                                                     class="form-control border-primary" placeholder="عنوان الشركة "
                                                     name="address">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="userinput4"> السجل التجاري</label> <br>
+                                               <a target="_blank" href="{{ asset('uploads/'.$company->commercial_register) }}"> <input type="button" class="btn btn info"></a>
                                             </div>
                                         </div>
 
