@@ -72,7 +72,7 @@
                                         <td>
 
                                            
-                                            <a href=" {{ route('get_single_work',encrypt($work->id)) }}"
+                                            <a target="_blank" href=" {{ route('get_single_work',encrypt($work->id)) }}"
                                                 class="btn btn-icon btn-info mr-1"> <i
                                                     class="la la-eye"></i></a>
                                             <a href="{{ route('workers.edit', $work->id) }}"
