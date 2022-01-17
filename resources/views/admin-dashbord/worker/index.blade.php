@@ -66,7 +66,7 @@
                                         <td>
                                             <input type="checkbox" data-id="{{ $work->id }}" name="status" class="js-switch" {{ $work->is_show == 1 ? 'checked' : '' }}>
                                             </td>
-                                        </tr>
+                                       
                                         
 
                                         <td>
