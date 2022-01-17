@@ -81,9 +81,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="userinput4"> السجل التجاري</label>
-                                                <input type="file"  id="userinput4" value="{{ $company->commercial_register }}"
-                                                    class="form-control border-primary" placeholder=" السجل التجاري"
-                                                    name="commercial_register">
+                                               <a href="{{ asset('uploads/'.$company->commercial_register) }}"></a>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
