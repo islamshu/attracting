@@ -52,9 +52,12 @@ class SendMessageController extends Controller
      * @param  \App\SendMessage  $sendMessage
      * @return \Illuminate\Http\Response
      */
-    public function show(SendMessage $sendMessage)
+    public function show($id)
     {
-        //
+        $message = SendMessage::find($id);
+        $message->status = 1;
+        $message->save();
+        return view('admin-dashbord.send-message.show')->with('messages',$message);
     }
 
     /**

@@ -54,7 +54,7 @@ class SendMessageController extends Controller
      */
     public function show($id)
     {
-        return view('admin-dashbord.send-message.show')->with('messages',SendMessage::find($id));
+     
     }
 
     /**
