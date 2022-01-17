@@ -59,7 +59,10 @@
         </li>
         <li class=" nav-item"><a href="{{ route('pages.index') }}"><i class="la la-cog"></i><span class="menu-title" data-i18n="nav.dash.main">الصفحات </span></a>
         </li>
-        <li class=" nav-item"><a href="{{ route('messageletter.index') }}"><i class="la la-cog"></i><span class="menu-title" data-i18n="nav.dash.main">طلبات الرسائل </span></a>
+        <li class=" nav-item"><a href="{{ route('messages') }}"><i class="la la-cog"></i><span class="menu-title" data-i18n="nav.dash.main">طلبات الرسائل </span></a>
+        </li>
+        
+        <li class=" nav-item"><a href="{{ route('messageletter.index') }}"><i class="la la-cog"></i><span class="menu-title" data-i18n="nav.dash.main">طلبات البريد الإلكتروني </span></a>
         </li>
         <li class="nav-item ">
           <a class="menu-item" href="#" data-i18n="nav.menu_levels.second_level_child.main">

@@ -14,7 +14,7 @@ class SendMessageController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin-dashbord.send-message.index')->with('messages',SendMessage::orderBy('id','desc')->get());
     }
 
     /**
