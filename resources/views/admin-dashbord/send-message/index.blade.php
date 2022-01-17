@@ -57,7 +57,7 @@
                                         <tr>
                                             <td>{{ $item->user->name }}</td>
                                             <td>{{ $item->subject }}</td>
-                                            <td>{{ $item->status == 0 'غير مقروء' ? : 'مقروء' }}</td>
+                                            <td>{{ $item->status == 0 trans('un read') ? : trans('read') }}</td>
 
                                        
 
