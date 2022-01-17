@@ -90,7 +90,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="userinput4"> السجل التجاري</label> <br>
-                                               <a target="_blank" href="{{ asset('uploads/'.$company->commercial_register) }}"> <input type="button" class="btn btn info"></a>
+                                               <a target="_blank" href="{{ asset('uploads/'.$company->commercial_register) }}"> <input type="button" class="btn btn-info" value="اضغط للمشاهدة" ></a>
                                             </div>
                                         </div>
 
