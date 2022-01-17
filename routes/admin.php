@@ -29,7 +29,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function ()
     Route::post('about','AboutController@store')->name('about.store');
     Route::get('generalinfo','GeneralController@index')->name('generalinfo.index');
     Route::post('generalinfo','GeneralController@store')->name('generalinfo.store');
-    Route::post('generalinfopaid','GeneralController@paid')->name('generalinfo.paid');
+    Route::get('generalinfopaid','GeneralController@paid')->name('generalinfo.paid');
 
     
     Route::get('firstsection','FirstSectionController@index')->name('firstsection.index');
