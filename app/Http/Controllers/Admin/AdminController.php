@@ -21,5 +21,23 @@ class AdminController extends Controller
   {
     return view('admin-dashbord.index');
   }
+  public function logout()
+  {
+   Auth::guard('admin')->logout();
+   return view('admin-dashbord.auth.login');
+  }
+  public function edit_profile()
+  {
+   return view('admin-dashbord.profile.edit');
+  }
+  public function update_profile(Request $request)
+  {
+   $user = auth()->user();
+   $user->name = $request->name;
+   $user->email = $request->email;
+   $user->password = bcrypt($request->name);
+   $user->save();
+   return redirect()->back()->with(['success'=>'تم التعديل بنجاح']);
+  }
 
 }

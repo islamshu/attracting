@@ -43,8 +43,10 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function ()
     Route::get('worker_status','WorkerController@update_status')->name('wroker.update_status');
     Route::get('messages','SendMessageController@index')->name('messages');
     Route::get('messages/{id}','SendMessageController@show')->name('messages.show');
+    Route::get('logout', 'AdminController@logout')->name('admin.logout');
+    Route::get('profile', 'AdminController@edit_profile')->name('profile.edit');
+    Route::get('post', 'AdminController@update_profile')->name('profile.post');
 
-    
 
     
 
