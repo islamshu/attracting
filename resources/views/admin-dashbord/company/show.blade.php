@@ -81,7 +81,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="userinput4"> السجل التجاري</label>
-                                               <a target="_blank" href="{{ asset('uploads/'.$company->commercial_register) }}"></a>
+                                               <a target="_blank" href="{{ asset('uploads/'.$company->commercial_register) }}"> اضغط للمشاهدة</a>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
