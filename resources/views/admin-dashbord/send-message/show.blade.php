@@ -36,10 +36,7 @@
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
-                            @include('inc.alerts.error')
-                            @include('inc.alerts.success')
-                                enctype="multipart/form-data">
-                                @csrf
+                        
                                 <div class="form-body">
                                     <div class="row">
                                         <div class="col-md-6">
