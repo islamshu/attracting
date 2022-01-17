@@ -57,7 +57,13 @@
                                         <tr>
                                             <td>{{ $item->user->name }}</td>
                                             <td>{{ $item->subject }}</td>
-                                            <td>{{ $item->status == 0 trans('un read') ? : trans('read') }}</td>
+                                            <td>@if($item->status == 0)
+                                                {{ __('un read') }}
+                                                @else
+                                                {{ __('read') }}
+
+                                                
+                                            @endif</td>
 
                                        
 
