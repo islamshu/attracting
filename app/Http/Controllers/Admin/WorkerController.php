@@ -89,7 +89,7 @@ class WorkerController extends Controller
     public function update_status(Request $request)
     {
         $user = Worker::find($request->id);
-        $user->status = $request->status;
+        $user->is_show = $request->status;
         $user->save();
     
         return response()->json(['message' => 'worker status updated successfully.']);
