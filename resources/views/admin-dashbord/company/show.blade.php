@@ -48,33 +48,33 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="userinput1">اسم الشركة</label>
-                                                <input type="text"  value="{{ $company->company_readonly name }}" id="userinput1"
-                                                    class="form-control border-primary" placeholder="اسم الشركة" readonly name="company_readonly name">
+                                                <input type="text" readonly value="{{ $company->company_name }}" id="userinput1"
+                                                     class="form-control border-primary" placeholder="اسم الشركة" name="company_name">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="userinput2">اسم المالك</label>
-                                                <input type="text"  value="{{ $company->owner_readonly name }}" id="userinput2"
+                                                <input type="text" readonly value="{{ $company->owner_name }}" id="userinput2"
                                                     class="form-control border-primary" placeholder="اسم المالك"
-                                                    readonly name="owner_readonly name">
+                                                    name="owner_name">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="userinput2">البريد الإلكتروني</label>
-                                                <input type="email"  value="{{ $company->email }}" id="userinput2"
+                                                <input type="email" readonly value="{{ $company->email }}" id="userinput2"
                                                     class="form-control border-primary" placeholder="البريد الإلكتروني"
-                                                    readonly name="email">
+                                                    name="email">
                                             </div>
                                         </div>
                                     
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="userinput3">رقم الهاتف</label>
-                                                <input type="number" value="{{ $company->phone }}"  id="userinput3"
-                                                    class="form-control border-primary" placeholder="رقم الهاتف" 
-                                                    readonly name="phone">
+                                                <input type="number" value="{{ $company->phone }}" readonly id="userinput3"
+                                                    class="form-control border-primary" placeholder="رقم الهاتف"
+                                                    name="phone">
                                             </div>
                                         </div>
                                         
@@ -83,15 +83,15 @@
                                                 <label for="userinput4"> السجل التجاري</label>
                                                 <input type="file"  id="userinput4" value="{{ $company->commercial_register }}"
                                                     class="form-control border-primary" placeholder=" السجل التجاري"
-                                                    readonly name="commercial_register">
+                                                    name="commercial_register">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="userinput4"> عنوان الشركة </label>
-                                                <input type="text"  id="userinput4" value="{{$company->address}}"
+                                                <input type="text" readonly id="userinput4" value="{{$company->address}}"
                                                     class="form-control border-primary" placeholder="عنوان الشركة "
-                                                    readonly name="address">
+                                                    name="address">
                                             </div>
                                         </div>
 
