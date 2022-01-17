@@ -45,22 +45,22 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="userinput1">الاسم</label>
-                                                <input type="text" required value="{{auth()->user->name}}" id="userinput1"
+                                                <label for="user()input1">الاسم</label>
+                                                <input type="text" required value="{{auth('admin')->user()->name}}" id="user()input1"
                                                     class="form-control border-primary" placeholder="الاسم" name="name">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="userinput1">البريد الإلكتروني</label>
-                                                <input type="email" required value="{{auth()->user->email}}" id="userinput1"
+                                                <label for="user()input1">البريد الإلكتروني</label>
+                                                <input type="email" required value="{{auth('admin')->user()->email}}" id="user()input1"
                                                     class="form-control border-primary" placeholder="البريد الإلكتروني" name="email">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="userinput1">كلمة المرور </label>
-                                                <input type="password"  id="userinput1"
+                                                <label for="user()input1">كلمة المرور </label>
+                                                <input type="password"  id="user()input1"
                                                     class="form-control border-primary" placeholder="كلمة المرور" name="password">
                                             </div>
                                         </div>
