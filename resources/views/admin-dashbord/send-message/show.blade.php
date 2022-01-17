@@ -59,7 +59,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <br><label> الرسالة </label>
-                                            <textarea name="" class="form-control" cols="30" rows="10">{!! $message->message !!}
+                                            <textarea readonly class="form-control" cols="30" rows="10">{!! $message->message !!}
                                             </textarea>
                                         </div>  
                                     </div>
