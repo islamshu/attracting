@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\FirstSection;
 use App\Http\Controllers\Controller;
 use App\Work;
+use App\Worker;
 use Illuminate\Http\Request;
 
 class WorkController extends Controller
@@ -27,6 +28,7 @@ class WorkController extends Controller
             $work->save();
             return redirect()->route('how_its_work.index')->with(['success'=>'تمت الإضافة بنجاح']);
     }
+  
     
     public function edit($id)
     {

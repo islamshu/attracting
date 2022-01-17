@@ -53,4 +53,5 @@ class MenuController extends Controller
         $menu = Menu::find($id)->delete();
         return redirect()->route('menu.index')->with(['success'=>'تم الحذف بنجاح']);
     }
+  
 }

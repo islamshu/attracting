@@ -86,6 +86,14 @@ class WorkerController extends Controller
         $worker->save();
         return redirect()->route('workers.index')->with(['success'=>'تم الاضافة بنجاح']);
     }
+    public function update_status(Request $request)
+    {
+        $user = Worker::find($request->id);
+        $user->status = $request->status;
+        $user->save();
+    
+        return response()->json(['message' => 'worker status updated successfully.']);
+    }
     
 
     /**

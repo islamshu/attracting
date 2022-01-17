@@ -46,6 +46,7 @@
                                     <th>مكتب العمل </th>
                                     <th> اسم مالك العمل </th>
                                     <th> الحالة </th>
+                                    <th>تفعيل / الغاء التفعيل</th>
                                     <th>الإجرائات</th>
                                 </tr>
                             </thead>
@@ -62,6 +63,11 @@
                                         <td>
                                             {{ get_status_worker_all($work)  }}
                                         </td>
+                                        <td>
+                                            <input type="checkbox" data-id="{{ $work->id }}" name="status" class="js-switch" {{ $item->is_show == 1 ? 'checked' : '' }}>
+                                            </td>
+                                        </tr>
+                                        
 
                                         <td>
                                             <a href="{{ route('workers.edit', $work->id) }}"
@@ -85,4 +91,23 @@
         </div>
     </div>
 </section>
+@endsection
+@section('script')
+<script>
+    $(document).ready(function(){
+    $('.js-switch').change(function () {
+        let status = $(this).prop('checked') === true ? 1 : 1;
+        let id = $(this).data('id');
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: '{{ route('wroker.update_status') }}',
+            data: {'status': status, 'id': id},
+            success: function (data) {
+                console.log(data.message);
+            }
+        });
+    });
+});
+</script>
 @endsection

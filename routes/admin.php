@@ -40,6 +40,8 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function ()
     Route::get('language_translate/{local}','GeneralController@show_translate')->name('show_translate');
     Route::post('/languages/key_value_store', 'GeneralController@key_value_store')->name('languages.key_value_store');
     Route::get('messagesLetter','MessageLetterController@index')->name('messageletter.index');
+    Route::get('worker_status','WorkerController@update_status')->name('wroker.update_status');
+
     
 
     
