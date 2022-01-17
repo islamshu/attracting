@@ -64,7 +64,7 @@
                                             {{ get_status_worker_all($work)  }}
                                         </td>
                                         <td>
-                                            <input type="checkbox" data-id="{{ $work->id }}" name="status" class="js-switch" {{ $item->is_show == 1 ? 'checked' : '' }}>
+                                            <input type="checkbox" data-id="{{ $work->id }}" name="status" class="js-switch" {{ $work->is_show == 1 ? 'checked' : '' }}>
                                             </td>
                                         </tr>
                                         
