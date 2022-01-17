@@ -23,7 +23,7 @@ class HomeController extends Controller
         $services = Service::where('status',1)->get();
 
         $fetures = FirstSection::first();
-        $workers = Worker::with('company')->where('status','0')->whereHas('company', function ($q)  {
+        $workers = Worker::with('company')->where('is_show',1)->where('status','0')->whereHas('company', function ($q)  {
             $q->where('status', 1);
         })->inRandomOrder(6)->get();
         $how_works = Work::orderBy('order','asc')->get();
@@ -64,7 +64,7 @@ class HomeController extends Controller
     {
         // $workers =Worker::get(); 
         $goverments = City::where('parent_id',0)->get();
-        $query  = Worker::query()->with('company')->whereHas('company', function ($q) use ($request) {
+        $query  = Worker::query()->where('is_show',1)->with('company')->whereHas('company', function ($q) use ($request) {
             $q->where('status', 1);
         });
 
