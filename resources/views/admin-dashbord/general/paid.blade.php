@@ -68,6 +68,7 @@
                                 <input type="text" value="{{  get_general_value('allowed_days') }}" id="userinput1" class="form-control border-primary" placeholder="عدد الأيام" name="general[allowed_days]">
                             </div>
                         </div>
+                    </div>
                        
                     
 
