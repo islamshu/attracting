@@ -57,7 +57,7 @@ class SendMessageController extends Controller
         $message = SendMessage::find($id);
         $message->status = 1;
         $message->save();
-        return view('admin-dashbord.send-message.show')->with('messages',$message);
+        return view('admin-dashbord.send-message.show')->with('message',$message);
     }
 
     /**
