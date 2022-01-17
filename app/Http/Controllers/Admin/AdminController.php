@@ -35,7 +35,9 @@ class AdminController extends Controller
    $user = auth()->user();
    $user->name = $request->name;
    $user->email = $request->email;
-   $user->password = bcrypt($request->name);
+   if($request->password != null){
+      $user->password = bcrypt($request->name);
+   }
    $user->save();
    return redirect()->back()->with(['success'=>'تم التعديل بنجاح']);
   }
