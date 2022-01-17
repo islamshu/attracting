@@ -65,9 +65,10 @@ class CompanyController extends Controller
     
         return response()->json(['message' => 'Company status updated successfully.']);
     }
-    public function show(Company $company)
+    public function show($id)
     {
-        //
+        return view('admin-dashbord.company.show')->with('company',Company::find($id));  
+
     }
     public function dashboard()
     {

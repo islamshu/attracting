@@ -64,6 +64,9 @@
                                             </td>
 
                                             <td>
+                                                <a href="{{ route('company.show', $company->id) }}"
+                                                    class="btn btn-icon btn-info mr-1"> <i
+                                                        class="la la-eye"></i></a>
                                                 <a href="{{ route('company.edit', $company->id) }}"
                                                     class="btn btn-icon btn-primary mr-1"> <i
                                                         class="la la-edit"></i></a>
