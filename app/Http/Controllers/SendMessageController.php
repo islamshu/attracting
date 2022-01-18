@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin;
+use App\Notifications\MessageNotofication;
 use App\SendMessage;
 use Illuminate\Http\Request;
+use Notification;
 
 class SendMessageController extends Controller
 {
@@ -41,6 +44,10 @@ class SendMessageController extends Controller
         $message->message = $request->massage;
         $message->user_id = auth()->id();
         $message->save();
+        $admin =Admin::first();
+        Notification::send($admin, new MessageNotofication($message));
+
+        
         return redirect()->back()->with(['success'=>'تم الارسال بنجاح']);
 
 

@@ -8,7 +8,7 @@ use App\Order;
 use App\BusinessSetting;
 use App\Father;
 use App\General;
-use App\Mail\PaidNotification;
+use Notification;
 use App\Student;
 use App\Studentpain;
 use Carbon\Carbon;
@@ -18,9 +18,11 @@ use Illuminate\Support\Facades\Mail;
 use App\CourseStudent;
 use App\Admin;
 use App\Booking;
+use App\Company;
 use App\Mail\ComapnyMail;
 use App\Mail\UserMail;
 use App\Notifications\CourseNot ;
+use App\Notifications\OrderPlacedNotification;
 use App\User;
 use App\Worker;
 
@@ -160,6 +162,12 @@ class ThawaniController extends Controller
 
         Mail::to($user)->send(new UserMail ($details));
         Mail::to($comapny)->send(new ComapnyMail($details));
+        $comapny = Company::find(Worker::find($booking->worker_id)->company->id);
+        $admin = Admin::first();
+
+        Notification::send($comapny, new OrderPlacedNotification($booking));
+        Notification::send($admin, new OrderPlacedNotification($booking));
+
 
         toastr()->success(trans('Booking successfuly'));
         return redirect()->back();

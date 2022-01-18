@@ -81,7 +81,7 @@
                                             <div class="form-group">
                                                 <br>
                                                 <label for="image">الصورة </label>
-                                                <input type="file" id="image" class="form-control border-primary" name="image" required>
+                                                <input type="file" id="image" class="form-control border-primary" name="image" >
                                             </div>
                                         </div>
                                     </div>

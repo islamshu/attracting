@@ -36,86 +36,38 @@
                 <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('admin.logout') }}"><i class="ft-power"></i>  تسجيل خروج</a>
               </div>
             </li>
-            <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-gb"></i><span class="selected-language"></span></a>
-              <div class="dropdown-menu" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-gb"></i> English</a>
-                <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a>
-                <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> Chinese</a>
-                <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i> German</a>
-              </div>
-            </li>
+          
             <li class="dropdown dropdown-notification nav-item">
-              <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i>
-                <span class="badge badge-pill badge-default badge-danger badge-default badge-up badge-glow">5</span>
+              <a class="nav-link nav-link-label "  data-toggle="dropdown"><i class="ficon ft-bell"></i>
+                <span class="badge badge-pill badge-default badge-danger badge-default badge-up badge-glow">{{ auth()->user()->unreadNotifications->count() }}</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                 <li class="dropdown-menu-header">
                   <h6 class="dropdown-header m-0">
                     <span class="grey darken-2">Notifications</span>
                   </h6>
-                  <span class="notification-tag badge badge-default badge-danger float-right m-0">5 New</span>
+                  <span class="notification-tag badge badge-default badge-danger float-right m-0">{{ auth()->user()->unreadNotifications->count() }} New</span>
                 </li>
                 <li class="scrollable-container media-list w-100">
-                  <a href="javascript:void(0)">
+                  @foreach (auth()->user()->unreadNotifications; as $notification)
+                      
+                  
+                  <a class="mark-as-read">
                     <div class="media">
-                      <div class="media-left align-self-center"><i class="ft-plus-square icon-bg-circle bg-cyan"></i></div>
+                      <div class="media-left align-self-center"><i  @if( $notification->data['type']  =='order') class="ft-plus-square icon-bg-circle bg-cyan" @else class="ft-download-cloud icon-bg-circle bg-red bg-darken-1" @endif ></i></div>
                       <div class="media-body">
-                        <h6 class="media-heading">You have new order!</h6>
-                        <p class="notification-text font-small-3 text-muted">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                        <h6 class="media-heading">{{ $notification->data['title'] }}</h6>
+                        <p class="notification-text font-small-3 text-muted">{{ $notification->data['desc'] }}</p>
                         <small>
-                          <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">30 minutes ago</time>
+                          <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">{{ $notification->created_at->diffForHumans() }}</time>
                         </small>
                       </div>
                     </div>
                   </a>
-                  <a href="javascript:void(0)">
-                    <div class="media">
-                      <div class="media-left align-self-center"><i class="ft-download-cloud icon-bg-circle bg-red bg-darken-1"></i></div>
-                      <div class="media-body">
-                        <h6 class="media-heading red darken-1">99% Server load</h6>
-                        <p class="notification-text font-small-3 text-muted">Aliquam tincidunt mauris eu risus.</p>
-                        <small>
-                          <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Five hour ago</time>
-                        </small>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="javascript:void(0)">
-                    <div class="media">
-                      <div class="media-left align-self-center"><i class="ft-alert-triangle icon-bg-circle bg-yellow bg-darken-3"></i></div>
-                      <div class="media-body">
-                        <h6 class="media-heading yellow darken-3">Warning notifixation</h6>
-                        <p class="notification-text font-small-3 text-muted">Vestibulum auctor dapibus neque.</p>
-                        <small>
-                          <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Today</time>
-                        </small>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="javascript:void(0)">
-                    <div class="media">
-                      <div class="media-left align-self-center"><i class="ft-check-circle icon-bg-circle bg-cyan"></i></div>
-                      <div class="media-body">
-                        <h6 class="media-heading">Complete the task</h6>
-                        <small>
-                          <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Last week</time>
-                        </small>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="javascript:void(0)">
-                    <div class="media">
-                      <div class="media-left align-self-center"><i class="ft-file icon-bg-circle bg-teal"></i></div>
-                      <div class="media-body">
-                        <h6 class="media-heading">Generate monthly report</h6>
-                        <small>
-                          <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Last month</time>
-                        </small>
-                      </div>
-                    </div>
-                  </a>
+                  @endforeach
+                  
+             
                 </li>
-                <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center" href="javascript:void(0)">Read all notifications</a></li>
               </ul>
             </li>
             <li class="dropdown dropdown-notification nav-item">
@@ -125,9 +77,10 @@
                   <h6 class="dropdown-header m-0">
                     <span class="grey darken-2">Messages</span>
                   </h6>
-                  <span class="notification-tag badge badge-default badge-warning float-right m-0">4 New</span>
+                  <span class="notification-tag badge badge-default badge-warning float-right m-0">{{ App\SendMessage::where('status',0)->count() }} New</span>
                 </li>
                 <li class="scrollable-container media-list w-100">
+                  @foreach (App\SendMessage::where('status',0)->get() as $item)
                   <a href="javascript:void(0)">
                     <div class="media">
                       <div class="media-left">
@@ -135,59 +88,17 @@
                           <img src="{{asset('backend/images/portrait/small/avatar-s-19.png')}}" alt="avatar"><i></i></span>
                       </div>
                       <div class="media-body">
-                        <h6 class="media-heading">Margaret Govan</h6>
-                        <p class="notification-text font-small-3 text-muted">I like your portfolio, let's start.</p>
+                        <h6 class="media-heading">{{ $item->user->name }}</h6>
+                        <p class="notification-text font-small-3 text-muted">{{ $item->title }}</p>
                         <small>
-                          <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Today</time>
+                          <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">{{ $item->created_at->diffForHumans() }}</time>
                         </small>
                       </div>
                     </div>
                   </a>
-                  <a href="javascript:void(0)">
-                    <div class="media">
-                      <div class="media-left">
-                        <span class="avatar avatar-sm avatar-busy rounded-circle">
-                          <img src="{{asset('backend/images/portrait/small/avatar-s-2.png')}}" alt="avatar"><i></i></span>
-                      </div>
-                      <div class="media-body">
-                        <h6 class="media-heading">Bret Lezama</h6>
-                        <p class="notification-text font-small-3 text-muted">I have seen your work, there is</p>
-                        <small>
-                          <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Tuesday</time>
-                        </small>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="javascript:void(0)">
-                    <div class="media">
-                      <div class="media-left">
-                        <span class="avatar avatar-sm avatar-online rounded-circle">
-                          <img src="{{asset('backend/images/portrait/small/avatar-s-3.png')}}" alt="avatar"><i></i></span>
-                      </div>
-                      <div class="media-body">
-                        <h6 class="media-heading">Carie Berra</h6>
-                        <p class="notification-text font-small-3 text-muted">Can we have call in this week ?</p>
-                        <small>
-                          <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Friday</time>
-                        </small>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="javascript:void(0)">
-                    <div class="media">
-                      <div class="media-left">
-                        <span class="avatar avatar-sm avatar-away rounded-circle">
-                          <img src="{{asset('backend/images/portrait/small/avatar-s-6.png')}}" alt="avatar"><i></i></span>
-                      </div>
-                      <div class="media-body">
-                        <h6 class="media-heading">Eric Alsobrook</h6>
-                        <p class="notification-text font-small-3 text-muted">We have project party this saturday.</p>
-                        <small>
-                          <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">last month</time>
-                        </small>
-                      </div>
-                    </div>
-                  </a>
+              
+                  @endforeach
+                 
                 </li>
                 <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center" href="javascript:void(0)">Read all messages</a></li>
               </ul>

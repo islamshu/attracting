@@ -50,7 +50,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function ()
     Route::get('profile', 'AdminController@edit_profile')->name('profile.edit');
     Route::post('profile', 'AdminController@update_profile')->name('profile.post');
 
-
+    Route::get('/mark-as-read', 'AdminController@markNotification')->name('admin.markNotification');
     
 
     

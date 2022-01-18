@@ -21,9 +21,6 @@ class BookingController extends Controller
         $booking = Booking::find($id);
         
         $worker = Worker::find($booking->worker->id);
-        
-
-       
         $worker->status = "2";
         $worker->save();
         $booking->status = 2;
