@@ -162,7 +162,7 @@
                                 </div>
                             </div>
                             <div class="info  wow animate__fadeInUp" data-wow-delay=".7s">
-                                <h4>{{ __('  "Religion": "Religion",') }}</h4>
+                                <h4>{{ __('Personal information') }}</h4>
                                 <div class=" justify-content-start align-items-center">
                                     <p>{{ __('skin colour') }} : {{ get_skin_colour($worker->skin_colour) }} <i class="far fa-badge-check"></i></p>
                                     <p>{{ __('weight') }} : {{ $worker->weight }} <i class="far fa-badge-check"></i></p>
