@@ -117,7 +117,7 @@ class WorkerController extends Controller
         $work = Worker::find($id);
       
         $states =City::where('parent_id',$work->governorate_id)->get();
-        dd($work->governorate_id);
+        // dd($work->governorate_id);
         return view('admin-dashbord.worker.edit')->with('governments',City::where('parent_id',0)->get())->with('work',$work)->with('states',$states)->with('companys',Company::get());
 
     }
