@@ -1234,7 +1234,7 @@ form .fa-search {
     .features_icon {
         margin-bottom: 30px;
         margin-top: 30px;
-        /* margin-left: 35%; */
+        margin-left: 0% !important;
         transition: all .4s;
         color: var(--main-color);
     }
