@@ -59,8 +59,13 @@
 
 
                         </div>
+                        @if(app()->getLocale() =='en')
 
                         <h4 class="salary float-right wow animate__fadeInUp" data-wow-delay=".7s">{{ $worker->salary }}$</h4>
+                        @else
+                        <h4 class="salary float-right wow animate__fadeInUp" data-wow-delay=".7s">${{ $worker->salary }}</h4>
+
+                        @endif
 
                         
                     </div>
