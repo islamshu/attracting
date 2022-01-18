@@ -45,7 +45,7 @@ class SendMessageController extends Controller
         $message->user_id = auth()->id();
         $message->save();
         $admin =Admin::first();
-        Notification::send($admin, new MessageNotofication($message));
+        Notification::send($admin, new MessageNotofication($admin));
 
         
         return redirect()->back()->with(['success'=>'تم الارسال بنجاح']);
