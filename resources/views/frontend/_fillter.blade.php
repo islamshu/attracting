@@ -5,7 +5,13 @@
         <link rel="stylesheet" href="{{ asset('front/css/filter.css') }}">
     @else
         <link rel="stylesheet" href="{{ asset('front/css/filterAR.css') }}">
-
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap');
+            *{
+                font-family: 'Cairo', sans-serif !important;
+            }
+            
+        </style>
     @endif
     <style>
         section.range-slider {
