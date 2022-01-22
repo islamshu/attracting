@@ -32,8 +32,20 @@
                             <input type="text" name="owner_name" value="{{ old('owner_name') }}" class="form-control mb-2" placeholder="{{ __('Owner name') }}">
                             <input type="email" name="email" value="{{ old('email') }}" class="form-control mb-2" placeholder="{{ __('email') }}">
                             <input type="text" name="phone" value="{{ old('phone') }}" class="form-control mb-2" placeholder="{{ __('phone') }}">
-                            <input type="text" name="address" value="{{ old('address') }}" class="form-control mb-2" placeholder="{{ __('address') }}">
-                            <input type="file" name="commercial_register" value="{{ old('commercial_register') }}" class="form-control mb-2" placeholder="{{ __('commercial register') }}">
+                            {{-- {{ dd(app()->getLocale()) }} --}}
+                            <select required name="governorate_id" class="form-control mb-2" id="governorate_id">
+                                <option   value="" selected disabled>{{ __('chose governorate') }} </option>
+                                @foreach ($governments as $item)
+                                <option value="{{ $item->id }}"> @if(app()->getLocale() == 'ar'){{ $item->name }} @else {{ $item->name_en }} @endif </option>
+                                @endforeach
+
+                            </select>
+                            <select required class=" form-control" id="state_id" name="state_id" >
+                                <option value="" selected disabled >{{ __('chose state') }} </option>
+                                
+                            </select>
+                       
+                            <input type="text"   onMouseOver="(this.type='file')" name="commercial_register" value="{{ old('commercial_register') }}" class="form-control mb-2" placeholder="{{ __('commercial register') }}">
 
                             <input type="password" name="password" class="form-control mb-2" placeholder="{{ __('password') }}">
                             <input type="password" name="password_confirm" class="form-control mb-2" placeholder="{{ __('password confirm') }}">
@@ -77,6 +89,42 @@
     <script src="{{ asset('front/libs/jquery-3.1.0.js') }}" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <script src="{{ asset('front/libs/fontawesome-pro-5.14.0-web/js/all.min.js') }}" ></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#governorate_id').change(function() {
+               let parent = $(this).val();
+    
+               $.ajax({
+                url: '{{ route('get_state') }}',
+                type: 'post',
+                dataType: 'html',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    parent: parent
+                },
+                success: function(data) {
+                    var jsonData = data;
+                    var obj = JSON.parse(jsonData);
+                    @if(app()->getLocale() == 'ar')
+                    $('#state_id').html(new Option('اختر الولاية', ''));
+                    @else
+                    $('#state_id').html(new Option('chose state', ''));
+                    @endif
+                    for (i in obj) {
+                        @if(app()->getLocale() == 'ar')
+                $('#state_id').append(new Option(obj[i].name, obj[i].id));
+                @else
+                $('#state_id').append(new Option(obj[i].name_en, obj[i].id));
+                @endif
+                }
+                }
+    
+    
+            });
+            });
+        
+        });
+    </script>
 
 </body>
 </html>

@@ -5,6 +5,7 @@ use App\City;
 use App\Company;
 use App\Http\Controllers\Controller;
 use App\Worker;
+use App\WorkerLang;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Doctrine\Inflector\Language as InflectorLanguage;
@@ -64,12 +65,19 @@ class WorkerController extends Controller
 
         $worker->image  = json_encode($array);
 
-        $worker->language  = json_encode($request->language) ;
         $worker->age = Carbon::parse( $request->DOB)->diff(Carbon::now())->y;
         $worker->skill=['ar'=>$request->skill_ar ,'en'=>$request->skill_en];
         $worker->dec=['ar'=>$request->dec_ar ,'en'=>$request->dec_en];
 
         $worker->save();
+        foreach($request->language as $key=>$langd){
+        
+            $lang =new  WorkerLang();
+            $lang -> name =$langd['name'];
+            $lang -> value =$langd['value'];
+            $lang -> worker_id = $worker->id;
+            $lang->save();
+        }
         return redirect()->route('company.workers.index')->with(['success'=>'تم الاضافة بنجاح']);
     }
 
@@ -148,12 +156,20 @@ class WorkerController extends Controller
         
         $worker->image  = json_encode($array);
 
-        $worker->language  = json_encode($request->language) ;
         $worker->age = Carbon::parse( $request->DOB)->diff(Carbon::now())->y;
         $worker->skill=['ar'=>$request->skill_ar ,'en'=>$request->skill_en];
         $worker->dec=['ar'=>$request->dec_ar ,'en'=>$request->dec_en];
 
         $worker->save();
+        $langs = WorkerLang::where('worker_id',$worker->id)->truncate();
+        foreach($request->language as $key=>$langd){
+        
+            $lang =new  WorkerLang();
+            $lang -> name =$langd['name'];
+            $lang -> value =$langd['value'];
+            $lang -> worker_id = $worker->id;
+            $lang->save();
+        }
         return redirect()->back()->with(['success'=>'تم التعديل بنجاح']);
     }
 

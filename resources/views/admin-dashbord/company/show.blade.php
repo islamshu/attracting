@@ -81,9 +81,17 @@
                                        
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="userinput4"> عنوان الشركة </label>
-                                                <input type="text" readonly id="userinput4" value="{{$company->address}}"
-                                                    class="form-control border-primary" placeholder="عنوان الشركة "
+                                                <label for="userinput4"> المحافظة </label>
+                                                <input type="text" readonly id="userinput4" value="{{$company->govermint->name}}"
+                                                    class="form-control border-primary" placeholder="المحافظة  "
+                                                    name="address">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="userinput4"> الولاية </label>
+                                                <input type="text" readonly id="userinput4" value="{{$company->state->name}}"
+                                                    class="form-control border-primary" placeholder="الولاية  "
                                                     name="address">
                                             </div>
                                         </div>

@@ -43,7 +43,8 @@
                             <thead>
                                 <tr>
                                     <th>اسم العامل</th>
-                                    <th>اسم المستأجر</th>                                
+                                    <th>اسم المستأجر</th> 
+                                    <th>رقم المستأجر</th>                               
                                     <th> الحالة </th>
                                     <th>الإجرائات</th>
                                 </tr>
@@ -57,6 +58,8 @@
                                         <td>{{ $order->worker->name }}</td>
 
                                         <td>{{ $order->user->name}}</td>
+                                        <td>{{ $order->user->phone}}</td>
+
                                         <td>{{ get_status_booking($order) }}</td>
                                       
 

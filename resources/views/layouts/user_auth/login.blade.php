@@ -33,7 +33,7 @@
                             <input type="submit" class="btn d-block sign-btn clearfix" value="{{ __('login') }}">
 
                         </form>
-                        <a href="" class="forget">{{ __('forget password') }}</a>
+                        <a href="{{ route('get_rest') }}" class="forget">{{ __('forget password') }}</a>
     
                         <div class="info d-flex justify-content-center ">
                             <a href="{{ route('fron.page','privacy_policy') }}" >{{ __('Privacy Policy') }}</a>

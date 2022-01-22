@@ -1,0 +1,64 @@
+@import url(StyleMain.css);
+
+
+
+.main{
+    background-image: url('../imgs/1\ \(1\).png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+
+.reset{
+    width: 500px;
+    margin:10px auto ;
+    padding: 60px 40px 60px 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: auto;
+    background-color: white;
+    opacity: 1 !important;
+}
+
+.reset p{
+    margin-bottom: 50px;
+    color: #888
+}
+
+.reset form{
+    text-align: center;
+}
+
+form input{
+    width: 100% !important;
+    margin: auto;
+}
+
+.reset form button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.footer{
+    padding-top: 40px;
+}
+
+
+
+@media (max-width: 767.98px) { 
+
+    .reset{
+        width: 340px;
+    }
+
+
+    .reset h2{
+        font-size: 28px;
+    }
+
+    .reset p{
+        font-size: 14px;
+    }
+}

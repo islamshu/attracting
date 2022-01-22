@@ -106,8 +106,15 @@
     "hello friends.": "hello friends.",
     "Sign Up": "Sign Up",
     "Sign in": "Sign in",
-    "name": "Name"
-
+    "name": "Name",
+    "good": "Good",
+    "medium": "Medium",
+    "beginner": "Beginner",
+    "maids": "maids",
+    "Orders": "Orders",
+    "contact": "contact",
+    "edit successfuly": "edit successfuly",
+    "profile": "profile"
 
 
 

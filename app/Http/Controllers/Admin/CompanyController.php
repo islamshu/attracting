@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\City;
 use App\Http\Controllers\Controller;
 use App\Company;
 use Illuminate\Http\Request;
@@ -25,7 +26,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        return view('admin-dashbord.company.create');  
+        return view('admin-dashbord.company.create')->with('governments',City::where('parent_id',0)->get());  
     }
 
     /**
@@ -43,7 +44,6 @@ class CompanyController extends Controller
             'phone'=>'required|unique:companies,phone',
             'password'=>'required',
             'commercial_register'=>'required',
-            'address'=>'required'
         ]);
         $request_all = $request->except(['password','commercial_register']);
         $request_all['password']=bcrypt($request->password);
@@ -84,7 +84,8 @@ class CompanyController extends Controller
      */
     public function edit(Company $company)
     {
-        return view('admin-dashbord.company.edit')->with('company',$company);  
+        $states =City::where('parent_id',$company->governorate_id)->get();
+        return view('admin-dashbord.company.edit')->with('company',$company)->with('states',$states)->with('governments',City::where('parent_id',0)->get());  
 
     }
 
@@ -103,7 +104,6 @@ class CompanyController extends Controller
             'company_name'=>'required',
             'email'=>'required|unique:companies,email,'.$company->id,
             'phone'=>'required|unique:companies,phone,'.$company->id,
-            'address'=>'required'
         ]);
         $request_all = $request->except(['password','commercial_register']);
         if($request->password != null){

@@ -44,7 +44,7 @@
                             <li>
                                 <a href="{{ route('user.dashboard') }}" class="{{ (request()->routeIs('user.dashboard')) ? 'active' : '' }}">
                                     <i class="far fa-users fa-2x"></i>
-                            <span>maids</span>
+                            <span>{{ __('maids') }}</span>
                             <i class="fas fa-chevron-right"></i>
                                 </a>
                             </li>
@@ -52,7 +52,7 @@
                             <li>
                                 <a href="{{ route('user.orders') }}" class="{{ (request()->routeIs('user.orders')) ? 'active' : '' }}">
                                     <i class="far fa-credit-card-front fa-2x"></i>
-                                <span>Orders</span>
+                                <span>{{ __('Orders') }}</span>
                                 <i class="fas fa-chevron-right"></i>
                                 </a>
                                 </li>
@@ -105,7 +105,9 @@
                             <div class="dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false"><img src="{{ asset('front/user_image.png') }}"></a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                 
+                                   
+                                    <a class="dropdown-item" href="/edit_user/profile"><i class="fas fa-user"></i> {{ __('profile') }} </a>
+
                                     <a class="dropdown-item" href="{{ route('logout_user') }}"><i class="fas fa-sign-out-alt"></i> {{ __('Sign Out') }} </a>
                                 </div>
                             </div>

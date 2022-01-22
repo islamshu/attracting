@@ -92,16 +92,8 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="col-md-6">
-                                        <br><label> اللغات* </label>
-                                        <select class="selectpicker form-control" required name="language[]" multiple  data-live-search="true">
-                                            <option  value="" selected disabled>اختر اللغات</option>
-
-                                            @foreach (get_language() as $item)
-                                            <option  value="{{ $item }}">{{ $item}}</option>
-                                            @endforeach
-                                        </select>
                                     </div>
+                                    <div class="row">
                                     <div class="col-md-6">
                                         <br><label> الديانة* </label>
                                         <select class="selectpicker form-control" required name="religion" >
@@ -188,7 +180,7 @@
                                         <input type="file" name="image[]" required class="form-control">
                                         <div class="input-group-btn"> 
 
-                                          <button style="margin-right: 20px;" class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>اضافة المزيد</button>
+                                          <button style="margin-right: 20px;" class="btn btn-success image" type="button"><i class="glyphicon glyphicon-plus"></i>اضافة المزيد</button>
                                         </div>
                                       </div>
                                     </div>
@@ -197,11 +189,30 @@
                                         <div class="control-group input-group" style="margin-top:10px">
                                           <input type="file" name="image[]" class="form-control">
                                           <div class="input-group-btn"> 
-                                            <button  style="margin-right: 20px;" class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> حذف</button>
+                                            <button  style="margin-right: 20px;" class="btn btn-danger lang" type="button"><i class="glyphicon glyphicon-remove"></i> حذف</button>
                                           </div>
                                         </div>
                                       </div>
-                                 
+                                      <div class="col-md-6">
+                                        <br><label> اللغات  </label>
+    
+                                    <div class="input-group control-group incrementLang" >
+                                        <input type="text" name="language[0][name]"  placeholder="اسم اللغة" class="form-control">
+                                        <select  name="language[0][value]"  class="form-control">
+                                            <option value="good">جيد</option>
+                                            <option value="medium">متوسط</option>
+                                            <option value="beginner">مبتديء</option>
+                                        </select>
+                                        <div class="input-group-btn"> 
+    
+                                          <button style="margin-right: 20px;" class="btn btn-success lang" type="button"><i class="glyphicon glyphicon-plus"></i>اضافة المزيد</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    
+                                      <div class="cloneLang hide" style="display: none">
+                                       
+                                      </div>
                                     
 
                                     </div>
@@ -223,7 +234,6 @@
 @endsection
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
-
 <script type="text/javascript">
     $(document).ready(function() {
         $('#governorate_id').change(function() {
@@ -250,9 +260,29 @@
 
         });
         });
-      $(".btn-success").click(function(){ 
+      $(".image").click(function(){ 
           var html = $(".clone").html();
           $(".increment").after(html);
+      });
+      var i = 1 ;
+      $(".lang").click(function(){ 
+     
+        //   var html = $(".cloneLang").html();
+        var html = ` <div class="control-group input-group" style="margin-top:10px">
+                                        <input type="text" name="language[`+i+`][name]"  placeholder="اسم اللغة"  class="form-control">
+                                        <select  name="language[`+i+`][value]"  class="form-control">
+                                            <option value="good">جيد</option>
+                                            <option value="medium">متوسط</option>
+                                            <option value="beginner">مبتديء</option>
+                                        </select>                                         
+                                         <div class="input-group-btn"> 
+                                        <button  style="margin-right: 20px;" class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> حذف</button>
+                                      </div>
+                                    </div>`;
+                                    i = i + 1;
+
+          $(".incrementLang").after(html);
+    
       });
       $("body").on("click",".btn-danger",function(){ 
           $(this).parents(".control-group").remove();

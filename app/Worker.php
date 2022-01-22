@@ -27,5 +27,11 @@ class Worker extends Model
     {
         return $this->belongsTo(City::class, 'governorate_id');
     }
+    /**
+     * Get all of the comments for the Worker
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+   
 
 }

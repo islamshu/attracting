@@ -32,8 +32,14 @@ Route::middleware('lang')->group(function () {
     Route::get('error_thawani','ThawaniController@errorUrl')->name('thawani.cancel');
     Route::get('send_message','SendMessageController@create')->name('user.message');
     Route::post('send_message','SendMessageController@store')->name('post_message');
-    Route::get('approve/{id}','BookingController@approve')->name('approve.booking');
 
+    
+    Route::get('approve/{id}','BookingController@approve')->name('approve.booking');
+    Route::get('reset_password','UserController@reset_get')->name('get_rest');
+    Route::get('reset-password/{token}', 'UserController@show_rest')->name('reset.password.get');
+    Route::post('reset-password', 'UserController@submitResetPasswordForm')->name('reset.password.post');
+
+    Route::post('reset_password_without_token', 'UserController@reset');
     
     Route::get('user-dashboard','UserController@dashboard');
     Route::middleware('auth')->group(function () {
@@ -42,6 +48,8 @@ Route::middleware('lang')->group(function () {
         Route::get('user-orders','UserController@orders')->name('user.orders');
 
         Route::get('logout_user','UserController@logout_user')->name('logout_user');
+        Route::get('edit_user/profile','UserController@get_profile');
+        Route::post('edit_user/profile_post','UserController@post_profile')->name('profile.edituser');
 
     });
         
