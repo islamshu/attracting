@@ -45,7 +45,7 @@
                                         <th>العنوان</th>
                                         <th>الترتيب</th>
                                  
-                                        <th>الإجرائات</th>
+                                        <th>الإجراءات</th>
                                     </tr>
                                 </thead>
                                 <tbody class="sort_menu">

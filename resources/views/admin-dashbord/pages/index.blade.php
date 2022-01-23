@@ -43,7 +43,7 @@
                                 <thead>
                                     <tr>
                                         <th> العنوان</th>
-                                        <th>الإجرائات</th>
+                                        <th>الإجراءات</th>
                                     </tr>
                                 </thead>
                                 <tbody>

@@ -229,7 +229,7 @@ class UserController extends Controller
 
     //check if payload is valid before moving on
     if ($validator->fails()) {
-        return redirect()->back()->withErrors(['email' => 'Please complete the form']);
+        return redirect()->back()->withErrors(['error' => 'Please complete the form']);
     }
 
     $password = $request->password;
@@ -241,7 +241,7 @@ class UserController extends Controller
 
     $user = User::where('email', $tokenData->email)->first();
 // Redirect the user back if the email is invalid
-    if (!$user) return redirect()->back()->withErrors(['email' => 'Email not found']);
+    if (!$user) return redirect()->back()->withErrors(['error' => 'Email not found']);
 //Hash and update the new password
     $user->password = \Hash::make($password);
     $user->update(); //or $user->save();
@@ -257,7 +257,7 @@ class UserController extends Controller
     if ($this->sendSuccessEmail($tokenData->email)) {
         return view('index');
     } else {
-        return redirect()->back()->withErrors(['email' => trans('A Network Error occurred. Please try again.')]);
+        return redirect()->back()->withErrors(['error' => trans('A Network Error occurred. Please try again.')]);
     }
 
 }
@@ -279,7 +279,7 @@ public function submitResetPasswordForm(Request $request)
                         ])
                         ->first();
     if(!$updatePassword){
-        return back()->withInput()->with('error', 'Invalid token!');
+        return back()->withInput()->with(['error'=>trans('Invalid token!')]);
     }
 
     $user = User::where('email', $updatePassword->email)->first();
@@ -299,6 +299,6 @@ public function submitResetPasswordForm(Request $request)
 
     DB::table('password_resets')->where(['email'=> $updatePassword->email])->delete();
 
-    return redirect('/login')->with('message', 'Your password has been changed!');
+    return redirect('/login')->with(['success'=>trans('Your password has been changed!')]);
 }
 }

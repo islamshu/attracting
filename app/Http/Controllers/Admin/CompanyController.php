@@ -96,6 +96,21 @@ class CompanyController extends Controller
      * @param  \App\Company  $company
      * @return \Illuminate\Http\Response
      */
+    public function edit_profile()
+  {
+   return view('company-dashbord.profile.edit');
+  }
+  public function update_profile(Request $request)
+  {
+   $user = auth()->user();
+   $user->name = $request->name;
+   $user->email = $request->email;
+   if($request->password != null){
+      $user->password = bcrypt($request->name);
+   }
+   $user->save();
+   return redirect()->back()->with(['success'=>'تم التعديل بنجاح']);
+  }
     public function update(Request $request, Company $company)
     {
         // dd($company);

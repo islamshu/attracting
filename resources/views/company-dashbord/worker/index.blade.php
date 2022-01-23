@@ -44,11 +44,11 @@
                                 <tr>
                                     <th>اسم العامل</th>
                                     <th>مكتب العمل </th>
-                                    <th> اسم مالك العمل </th>
+                                    <th> رقم مكتب العمل </th>
                                     <th> الحالة </th>
                                     <th>تفعيل / الغاء التفعيل</th>
 
-                                    <th>الإجرائات</th>
+                                    <th>الإجراءات</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -60,7 +60,7 @@
                                         <td>{{ $work->name }}</td>
 
                                         <td>{{ $work->company->company_name }}</td>
-                                        <td>{{ $work->company->owner_name }}</td>
+                                        <td>{{ $work->company->phone }}</td>
                                         <td>
                                             {{ get_status_worker($work) }}
                                         </td>

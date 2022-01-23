@@ -60,6 +60,9 @@ Route::middleware('lang')->group(function () {
         Route::resource('orders', 'OrderController');
         Route::get('logout', 'WorkerController@logout_company')->name('logout');
         Route::get('worker_status','WorkerController@update_status')->name('wroker.update_status');
+        Route::get('profile','CompanyController@edit_profile')->name('profile.edit');
+
+        Route::post('profile', 'CompanyController@update_profile')->name('profile.post');
 
 
     });

@@ -114,7 +114,16 @@
     "Orders": "Orders",
     "contact": "contact",
     "edit successfuly": "edit successfuly",
-    "profile": "profile"
+    "profile": "profile",
+    "reset password": "reset password",
+    "Confirm": "Confirm",
+    "logout successfuly": "logout successfuly",
+    "User does not exist": "User does not exist",
+    "A reset link has been sent to your email address.": "A reset link has been sent to your email address.",
+    "Confirm": "A Network Error occurred. Please try again.",
+    "A Network Error occurred. Please try again.": "A Network Error occurred. Please try again.",
+    "Invalid token!": "Invalid token!",
+    "Your password has been changed!": "Your password has been changed!"
 
 
 

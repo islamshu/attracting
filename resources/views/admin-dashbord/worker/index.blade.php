@@ -2,13 +2,13 @@
 @section('content')
 <div class="content-header row">
     <div class="content-header-left col-md-6 col-12 mb-2">
-        <h3 class="content-header-title">العاملين</h3>
+        <h3 class="content-header-title">العاملات</h3>
         <div class="row breadcrumbs-top">
             <div class="breadcrumb-wrapper col-12">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="">الرئيسية</a>
                     </li>
-                    <li class="breadcrumb-item active">العاملين
+                    <li class="breadcrumb-item active">العاملات
                     </li>
 
                 </ol>
@@ -23,7 +23,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">العاملين</h4>
+                    <h4 class="card-title">العاملات</h4>
                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     <div class="heading-elements">
                         <ul class="list-inline mb-0">
@@ -44,10 +44,10 @@
                                 <tr>
                                     <th>اسم العامل</th>
                                     <th>مكتب العمل </th>
-                                    <th> اسم مالك العمل </th>
+                                    <th> رقم مكتب العمل </th>
                                     <th> الحالة </th>
                                     <th>تفعيل / الغاء التفعيل</th>
-                                    <th>الإجرائات</th>
+                                    <th>الإجراءات</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,7 +59,7 @@
                                         <td>{{ $work->name }}</td>
 
                                         <td>{{ $work->company->company_name }}</td>
-                                        <td>{{ $work->company->owner_name }}</td>
+                                        <td>{{ $work->company->phone }}</td>
                                         <td>
                                             {{ get_status_worker_all($work)  }}
                                         </td>

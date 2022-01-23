@@ -1,0 +1,5 @@
+@import url('orders.css');
+@import url('styleAr.css');
+.content-sup .order-item {
+    direction: ltr;
+}

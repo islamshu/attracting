@@ -46,7 +46,7 @@
                                         <th> اسم القائنة</th>
                                         <th> الرابط</th>
 
-                                        <th>الإجرائات</th>
+                                        <th>الإجراءات</th>
                                     </tr>
                                 </thead>
                                 <tbody class="sort_menu">

@@ -1,6 +1,12 @@
 @extends('layouts.user_dashboard')
 @section('css')
+@if (app()->getLocale() == 'en')
 <link rel="stylesheet" href="{{ asset('user_dash/css/contact.css') }}">
+
+@else
+<link rel="stylesheet" href="{{ asset('user_dash/css/contactAr.css') }}">
+
+@endif
 
 @endsection
 @section('content')
