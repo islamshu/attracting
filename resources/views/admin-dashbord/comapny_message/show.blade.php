@@ -99,7 +99,7 @@
 
                         @endif
                     </p>  
-              <h3 class="list-group-item-heading"> {!! $message->body !!}</h3>
+              <h3 class="list-group-item-heading"> {!! $message->message !!}</h3>
               
             </div>
             @endforeach
