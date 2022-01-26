@@ -89,6 +89,7 @@
             </div>
            
             @foreach ($message->megs as $msg)
+            
             <div class="email-app-title card-body" @if($msg ->user_type == 'admin') style="background: #cac9c7" @endif>
                 <p class="list-group-item-text">
                     <span class="primary">
@@ -99,7 +100,7 @@
 
                         @endif
                     </p>  
-              <h3 class="list-group-item-heading"> {!! $message->message !!}</h3>
+              <h3 class="list-group-item-heading"> {!! $msg->message !!}</h3>
               
             </div>
             @endforeach
