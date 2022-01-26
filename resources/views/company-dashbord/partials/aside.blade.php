@@ -18,7 +18,20 @@
    
             
           </ul>
+          
         </li>
+        
+        <li class=" nav-item"><a href="index.html"><i class="la la-home"></i><span class="menu-title" data-i18n="nav.dash.main">الرسائل</span></a>
+          <ul class="menu-content">
+            <li><a class="menu-item" href="{{ route('company.comapny-message.index') }}" data-i18n="nav.dash.ecommerce">جميع الرسائل</a>
+            </li>
+   
+            
+          </ul>
+          
+        </li>
+
+        
     
       </ul>
     </div>

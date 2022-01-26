@@ -1,0 +1,98 @@
+@import url(StyleMainAR.css);
+.content-box {
+    background-color: white;
+    max-width: 80%;
+    margin-left: 20px;
+}
+
+.content-box h3 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.massage-box {
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+    padding: 40px 20px;
+}
+
+.massages {
+    border: 1px solid #cccccc;
+    border-bottom: unset;
+}
+
+.massage {
+    align-items: center;
+    position: relative;
+    text-transform: capitalize;
+    border-bottom: 1px solid #cccccc;
+    padding: 10px;
+    padding-left: 20px;
+    transition: all .5s;
+}
+
+.massage:hover {
+    background-color: rgb(245, 248, 252);
+}
+
+.massage .img-box {
+    display: inline-block;
+    position: relative;
+    width: 46px;
+    height: 46px;
+    text-align: center;
+    flex-shrink: 0;
+    left: unset !important;
+    margin-right: 20px;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.massage-body {
+    max-width: 80%;
+    flex: 1;
+    cursor: pointer;
+    position: relative;
+}
+
+.massage-body .name {
+    font-size: 14px;
+    color: #4b4747;
+}
+
+.massage-body .title {
+    font-weight: 600;
+    font-size: 15px;
+    color: #4b4747;
+}
+
+.massage-body .massage-txt {
+    font-size: 14px;
+    color: #9c9c9c;
+}
+
+.date {
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    color: #9c9c9c;
+    font-size: 14px;
+}
+
+@media (max-width: 670.98px) {
+    .massage-body .name {
+        font-size: 12px;
+    }
+    .massage-body .title {
+        font-size: 13px;
+    }
+    .massage-body .massage-txt {
+        font-size: 10px;
+    }
+    .date {
+        font-size: 10px;
+    }
+}

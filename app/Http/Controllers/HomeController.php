@@ -7,6 +7,7 @@ use App\FirstSection;
 use App\Menu;
 use App\MessageLetter;
 use App\Page;
+use App\SendFront;
 use App\Service;
 use App\Slider;
 use App\Work;
@@ -32,6 +33,22 @@ class HomeController extends Controller
     
         
        return view('frontend.index',compact('sliders','fetures','workers','services','how_works','statstic'));
+    }
+    public function contact_us(){
+        return view('frontend.contact_us');
+    }
+    public function post_contact_us(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'subject'=>'required',
+            'massage'=>'required',
+        ]);
+
+        SendFront::create($request->all());
+        toastr()->success(trans('Send successfuly'));
+
+        return redirect()->back();
     }
     public function get_single_work($id)
     {
@@ -80,6 +97,11 @@ class HomeController extends Controller
             // if($request->governorate_id != )
             return $q->where('state_id', $request->state_id);
         });
+        $query->when($request->natonality, function ($q) use ($request) {
+            return $q->where('nationality', $request->natonality);
+
+        });
+        
         $query->when($request->learn, function ($q) use ($request) {
             if($request->learn == 0 ){
                 return ;
@@ -110,4 +132,5 @@ class HomeController extends Controller
         
         return view('frontend._fillter',compact('goverments','workers','request'));
     }
+ 
 }

@@ -1,0 +1,90 @@
+@import url(style.css);
+
+
+.list, .content{
+    height: 1000px;
+}
+
+.massage-content{
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+    padding:40px 20px;
+    background-color: white;
+    margin-left: 20px;
+    width: 80%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+
+}
+
+.massage-content .head{
+    display: flex;
+    position: relative;
+}
+
+.massage-content .info{
+    max-width: 70%;
+}
+
+.head{
+    margin-bottom: 30px;
+}
+
+.head .img-box{
+    display: inline-block;
+    position: relative;
+    width: 66px;
+    height: 66px;
+    text-align: center;
+    flex-shrink: 0;
+    left: unset !important;
+    margin-right: 20px;
+}
+
+.head .img-box img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+}
+
+.date-val{
+    position: absolute;
+    top: 10px;
+    right: 5px;
+}
+
+.head .from{
+    font-weight: 600;
+}
+
+.m-body{
+    border-bottom: 1px solid rgb(209, 209, 209);
+    padding-bottom: 30px;
+}
+
+.replay{
+    margin-top: 30px;
+}
+
+
+ 
+@media (max-width: 670.98px) {
+
+    .massage-content .info{
+        font-size: 13px;
+    }
+
+    .head .img-box{
+        width: 50px;
+        height: 50px;
+    }
+
+    .date-val{
+        font-size: 12px;
+    }
+
+    .m-body p{
+        font-size: 12px;
+    }
+}

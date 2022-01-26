@@ -73,7 +73,7 @@
                         <input class="form-control mr-sm-2" type="search" name="title" value="{{ $request->title }}" placeholder="Search" aria-label="Search">
                         <button class="btn btn-info my-2 my-sm-0" type="submit">{{ __('Search') }}</button>
 
-                        <div class="select-items col-lg-6 col-md-6 col-sm-12">
+                        <div class="select-items col-lg-12 col-md-12 col-sm-12">
 
                             <select class="select form-control m-2"  name="governorate_id" id="governorate_id">
                                 <option value="" selected disabled>{{ __('Chose Governorate') }}</option>
@@ -87,6 +87,20 @@
                                 <option value="" selected disabled>{{ __('Chose State') }}</option>
                                 @forelse (\App\City::where('parent_id',$request->governorate_id)->get() as $item)
                                 <option value="{{ $item->id }}" @if($request->state_id == $item->id) selected @endif >{{ $item->name }}</option>
+    
+                                @empty
+                                    
+                                @endforelse
+
+                            </select>
+                            
+                           
+                            <select class="select form-control m-2" onchange="filter()" id="natonality" name="natonality">
+                                <option value="" selected disabled>{{ __('Chose Natonality') }}</option>
+                                
+                                @forelse (get_natonalty() as $item)
+
+                                <option value="{{ $item }}" @if($item == $request->natonality) selected @endif >{{ $item }}</option>
     
                                 @empty
                                     
@@ -118,13 +132,16 @@
                             </select>
 
                         </div>
-                        <label for=""> {{ __('Range price') }} :</label>
+                    </div>
                         <br>
-                        <span class="rangeValues"></span>
+
+                        <label for=""> {{ __('Range price') }} :</label>
+                      
+                 
 
                         <section class="range-slider col-lg-6 col-md-6 col-sm-12">
                             <br>
-                           
+                            <span class="rangeValues"></span>
                             <input class="form-control" name="min_price" onchange="filter()" value="{{ $request->min_price ? $request->min_price : 0}}" min="0" max="600" step="1" type="range">
                             <input class="form-control" name="max_price" onchange="filter()" value="{{  $request->max_price ? $request->max_price : 600 }}" min="0" max="600" step="1" type="range">
                         </section>

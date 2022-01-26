@@ -120,10 +120,17 @@
     "logout successfuly": "logout successfuly",
     "User does not exist": "User does not exist",
     "A reset link has been sent to your email address.": "A reset link has been sent to your email address.",
-    "Confirm": "A Network Error occurred. Please try again.",
     "A Network Error occurred. Please try again.": "A Network Error occurred. Please try again.",
     "Invalid token!": "Invalid token!",
-    "Your password has been changed!": "Your password has been changed!"
+    "Your password has been changed!": "Your password has been changed!",
+    "successfully sent": "successfully sent",
+    "Name": "Name",
+    "Mail": "Mail",
+    "Subject": "Subject",
+    "Massage": "Massage",
+    "Send": "Send",
+    "Contact Us": "Contact Us",
+    "Send successfuly": "Send successfuly"
 
 
 

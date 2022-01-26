@@ -19,7 +19,10 @@
           <ul class="nav navbar-nav mr-auto float-left">
             <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu"></i></a></li>
             <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
-          
+            <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" target="_blank" href="/">
+              {{-- <i class="ficon fa-desktop"></i> --}}
+              <img src="https://icons.iconarchive.com/icons/vexels/office/256/desktop-icon.png" width="40" height="30" alt="avatar">
+            </a></li>
           </ul>
           <ul class="nav navbar-nav float-right">
             <li class="dropdown dropdown-user nav-item">

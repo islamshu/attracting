@@ -49,6 +49,9 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function ()
     Route::get('logout', 'AdminController@logout')->name('admin.logout');
     Route::get('profile', 'AdminController@edit_profile')->name('profile.edit');
     Route::post('profile', 'AdminController@update_profile')->name('profile.post');
+    Route::resource('frontmessage', 'FrontMessageController');
+    Route::resource('comapny_message', 'ComapnyMessageController');
+    Route::post('message_replay', 'ComapnyMessageController@replay')->name('admin.replay');
 
     Route::get('/mark-as-read', 'AdminController@markNotification')->name('admin.markNotification');
     

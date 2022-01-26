@@ -86,7 +86,9 @@ class WorkerController extends Controller
 
         $worker->save();
         foreach($request->language as $key=>$langd){
-        
+            if($langd['name'] == null || $langd['value'] == null  ){
+                continue;
+            }
         $lang =new  WorkerLang();
         $lang -> name =$langd['name'];
         $lang -> value =$langd['value'];
@@ -185,7 +187,9 @@ class WorkerController extends Controller
         $worker->save();
         $langs = WorkerLang::where('worker_id',$worker->id)->truncate();
         foreach($request->language as $key=>$langd){
-        
+            if($langd['name'] == null || $langd['value'] == null  ){
+                continue;
+            }
             $lang =new  WorkerLang();
             $lang -> name =$langd['name'];
             $lang -> value =$langd['value'];

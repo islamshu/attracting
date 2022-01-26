@@ -30,6 +30,12 @@ class SendMessageController extends Controller
     {
         return view('frontend.send_message');
     }
+    
+    public function all_message(){
+        $messages = SendMessage::where('user_id',auth()->id())->orderBy('id','desc')->get();
+        // dd($messages);
+        return view('frontend.all_message')->with('messages',$messages);
+    }
 
     /**
      * Store a newly created resource in storage.

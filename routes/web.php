@@ -31,7 +31,11 @@ Route::middleware('lang')->group(function () {
     Route::get('success_thawani/{id}','ThawaniController@successUrl')->name('thawani.done');
     Route::get('error_thawani','ThawaniController@errorUrl')->name('thawani.cancel');
     Route::get('send_message','SendMessageController@create')->name('user.message');
+    Route::get('all_message','SendMessageController@all_message')->name('all.message');
+
     Route::post('send_message','SendMessageController@store')->name('post_message');
+    Route::get('countat_us','HomeController@contact_us')->name('get_contact_us');
+    Route::post('countat_us','HomeController@post_contact_us')->name('post_contact_us');
 
     
     Route::get('approve/{id}','BookingController@approve')->name('approve.booking');
@@ -61,7 +65,11 @@ Route::middleware('lang')->group(function () {
         Route::get('logout', 'WorkerController@logout_company')->name('logout');
         Route::get('worker_status','WorkerController@update_status')->name('wroker.update_status');
         Route::get('profile','CompanyController@edit_profile')->name('profile.edit');
+        Route::resource('comapny-message','SendMessageController');
+        Route::post('replay', 'SendMessageController@replay')->name('replay.message');
 
+        
+        
         Route::post('profile', 'CompanyController@update_profile')->name('profile.post');
 
 
