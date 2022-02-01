@@ -69,10 +69,19 @@
                             <li>
                                 <a href="{{ route('user.message') }}" class="{{ (request()->routeIs('user.message')) ? 'active' : '' }}">
                                     <i class="far fa-comment fa-2x"></i>
-                                <span>{{ __('contact') }}</span>
+                                <span>{{ __('Send Message') }}</span>
                                 <i class="fas fa-chevron-right"></i>
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{ route('all.message') }}" class="{{ (request()->routeIs('all.message')) ? 'active' : '' }}">
+                                    <i class="far fa-comment fa-2x"></i>
+                                <span>{{ __('All Message') }}</span>
+                                <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </li>
+
+                            
 
                         
                         

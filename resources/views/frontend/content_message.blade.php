@@ -67,7 +67,7 @@
                     @csrf
                     <input type="hidden" name="message_id" value="{{ $message->id }}">
                     <input type="hidden" name="user_type" value="user">
-                    <textarea name="body" class="form-control" rows="5" placeholder="Enter Massage Here" ></textarea>
+                    <textarea name="body" class="form-control" rows="5" placeholder="{{ __('Enter Massage Here') }}" ></textarea>
                     <button type="submit" class="btn btn-success mt-3"><{{ __('Send') }}</button>
                 </form>
             </div>
