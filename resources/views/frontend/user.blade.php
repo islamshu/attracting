@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="{{ asset('user_dash/css/mids.css') }}">
 
     @else
-        <link rel="stylesheet" href="{{ asset('user_dash/css/midsAr.css') }}">
+        <link rel="stylesheet" href="{{ asset('user_dash/css/MidsAr.css') }}">
 
     @endif
 
