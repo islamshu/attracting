@@ -38,7 +38,7 @@ Route::middleware('lang')->group(function () {
     
     
     Route::post('send_message','SendMessageController@store')->name('post_message');
-    Route::get('countat_us','HomeController@contact_us')->name('get_contact_us');
+    Route::get('contact_us','HomeController@contact_us')->name('get_contact_us');
     Route::post('countat_us','HomeController@post_contact_us')->name('post_contact_us');
 
     
