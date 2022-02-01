@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\City;
 use App\FirstSection;
+use App\FrontReplay;
 use App\Menu;
 use App\MessageLetter;
 use App\Page;
@@ -55,6 +56,14 @@ class HomeController extends Controller
         $worker = Worker::find(decrypt($id));
         return view('frontend.workers.details',compact('worker'));
 
+    }
+    public function FrontReplay(Request $request){
+        $message = new FrontReplay();
+        $message->message_id = $request->message_id;
+        $message->user_type = $request->user_type;
+        $message->body = $request->body;
+        $message->save();
+        return redirect()->back()->with(['success'=>'تم الارسال بنجاح']);
     }
     public function change_lang($lang){
         Session::put('lang', $lang);

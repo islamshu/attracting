@@ -32,7 +32,11 @@ Route::middleware('lang')->group(function () {
     Route::get('error_thawani','ThawaniController@errorUrl')->name('thawani.cancel');
     Route::get('send_message','SendMessageController@create')->name('user.message');
     Route::get('all_message','SendMessageController@all_message')->name('all.message');
+    Route::get('all_message/show/{id}','SendMessageController@show_message')->name('show.message');
+    Route::post('replay_front','HomeController@FrontReplay')->name('replay_front');
 
+    
+    
     Route::post('send_message','SendMessageController@store')->name('post_message');
     Route::get('countat_us','HomeController@contact_us')->name('get_contact_us');
     Route::post('countat_us','HomeController@post_contact_us')->name('post_contact_us');

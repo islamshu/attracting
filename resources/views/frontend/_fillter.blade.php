@@ -138,13 +138,18 @@
                         <label for=""> {{ __('Range price') }} :</label>
                       
                  
+                        <section class="range-slider">
 
-                        <section class="range-slider col-lg-6 col-md-6 col-sm-12">
-                            <br>
                             <span class="rangeValues"></span>
-                            <input class="form-control" name="min_price" onchange="filter()" value="{{ $request->min_price ? $request->min_price : 0}}" min="0" max="600" step="1" type="range">
-                            <input class="form-control" name="max_price" onchange="filter()" value="{{  $request->max_price ? $request->max_price : 600 }}" min="0" max="600" step="1" type="range">
-                        </section>
+                            <input value="0" min="0" max="1000" step="1" type="range">
+                            <input value="1000" min="0" max="1000" step="1" type="range">
+                          </section>
+                        {{-- <section class="range-slider col-lg-6 col-md-6 col-sm-12">
+                            
+                            <span class="rangeValues"></span>
+                            <input class="form-control" name="min_price"  value="{{ $request->min_price ? $request->min_price : 0}}" min="0" max="600" step="1" type="range">
+                            <input class="form-control" name="max_price"  value="{{  $request->max_price ? $request->max_price : 600 }}" min="0" max="600" step="1" type="range">
+                        </section> --}}
                         <button type="button" class="btn btn-warning" id="clear_data"> {{ __('Clear') }}</button>
 
                     </form>
@@ -168,7 +173,7 @@
 
                             <div class="col-lg-4 col-sm-6  rounded text-center">
                                 <div class="service-item wow animate__fadeInUp" data-wow-delay=".7s">
-                                    <span class="available">{{ get_status_worker_all($item) }}</span>
+                                    <span class="available" style="background: {{ get_status_worker_all_color($item) }}">{{ get_status_worker_all($item) }}</span>
                                     <div class="img-box">
                                         @php
                                             $image = json_decode($item->image);
@@ -254,7 +259,9 @@
                 }
 
                 var displayElement = parent.getElementsByClassName("rangeValues")[0];
+                
                 displayElement.innerHTML = slide1 + " - " + slide2;
+              
             }
 
             window.onload = function() {

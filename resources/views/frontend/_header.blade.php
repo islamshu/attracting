@@ -84,7 +84,7 @@
             @else
 
                 <div class="dropdown">
-                    <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+                    <a class="btn dropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
                       <img src="{{ asset('front/user_image.png') }}" width="30" height="30" alt="">
                       </a>
                   

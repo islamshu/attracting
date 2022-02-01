@@ -455,6 +455,17 @@ function get_status_worker_all($item)
         return trans('Avalable');
     }
 }
+function get_status_worker_all_color($item)
+{
+    $stats = $item->status;
+    if($stats == 1){
+       return '#ffc107';
+    }elseif($stats == 2){
+        return '#0726ff';
+    }elseif($stats == 0){
+        return '#04aa6d';
+    }
+}
 function get_status_booking($item)
 {
     $stats = $item->status;

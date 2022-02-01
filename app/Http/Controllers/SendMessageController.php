@@ -36,6 +36,11 @@ class SendMessageController extends Controller
         // dd($messages);
         return view('frontend.all_message')->with('messages',$messages);
     }
+    public function show_message($id){
+        $message = SendMessage::find($id);
+        // dd($messages);
+        return view('frontend.content_message')->with('message',$message);
+    }
 
     /**
      * Store a newly created resource in storage.

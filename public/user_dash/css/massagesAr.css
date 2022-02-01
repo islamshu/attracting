@@ -1,0 +1,25 @@
+@import url(massages.css);
+@import url(styleAr.css);
+body {
+    direction: rtl;
+    text-align: right;
+}
+
+.content-box {
+    margin-left: unset;
+    margin-right: 20px;
+}
+
+.date {
+    right: unset;
+    left: 5px;
+}
+
+.massage .img-box {
+    margin-right: unset;
+    margin-left: 20px;
+}
+
+.user-info .img {
+    margin-right: 10px;
+}

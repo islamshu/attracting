@@ -13,7 +13,7 @@
 <div class="main">
 
 
-    <div class="img-main">
+    <div class="img-main" style="text-align: center">
         <img src="{{ asset('front/imgs/new_message.svg') }}" class="wow animate__fadeInUp"data-wow-delay=".7s">
         <!-- <div class="overlay"></div> -->
     </div>
