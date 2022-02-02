@@ -46,6 +46,7 @@
                                     <th>اسم الكفيل</th> 
                                     <th>رقم الكفيل</th>                               
                                     <th> الحالة </th>
+                                    <th> التاريخ </th>
                                     <th>الإجراءات</th>
                                 </tr>
                             </thead>
@@ -62,6 +63,7 @@
 
                                         <td>{{ get_status_booking($order) }}</td>
                                       
+                                        <td>{{ $order->created_at }}</td>
 
                                         <td>
                                             <a class="btn btn-info" href="{{ route('approve.booking',$order->id) }}">تأكيد الحجز</a>

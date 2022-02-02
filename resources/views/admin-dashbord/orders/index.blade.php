@@ -46,6 +46,7 @@
                                     <th>اسم الكفيل</th> 
                                     <th>رقم الكفيل</th>                               
                                     <th> الحالة </th>
+                                    <th> التاريخ </th>
                                     <th>الإجراءات</th>
                                 </tr>
                             </thead>
@@ -60,6 +61,7 @@
                                         <td>{{ $order->user->name}}</td>
                                         <td>{{ $order->user->phone}}</td>
                                         <td>{{ get_status_booking($order) }}</td>
+                                        <td>{{ $order->created_at }}</td>
                                       
 
                                         <td>
