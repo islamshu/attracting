@@ -38,7 +38,8 @@
     "first": "first",
     "social information": "social information",
     "information": "information",
-    "languages": "languages",
+    "Languages": "Languages",
+    "languages": "Languages",
     "Degree": "Degree",
     "number of children": "number of children",
     "Religion": "Religion",
@@ -134,7 +135,9 @@
     "Send Message": "Send Message",
     "All Message": "All Message",
     "Enter Massage Here": "Enter Massage Here",
-    "Replay": "Replay"
+    "Replay": "Replay",
+    "Geaneral Information": "Geaneral Information",
+    "Nationality": "Nationality"
 
 
 

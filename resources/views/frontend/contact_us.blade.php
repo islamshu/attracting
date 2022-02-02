@@ -34,16 +34,16 @@
             <form method="post" action="{{ route('post_contact_us') }}">
                 @csrf
                 <label>{{ __('Name') }}</label>
-                <input type="text" class="form-control" required name="name" placeholder="{{ __('Name') }}" value="{{ old('name') }}">
+                <input type="text" class="form-control" required name="name" placeholder="{{ __('name') }}" value="{{ old('name') }}">
                 <label>{{ __('Mail') }}</label>
-                <input type="email" class="form-control" required name="email" placeholder="{{ __('Mail') }}" value="{{ old('mail') }}">
+                <input type="email" class="form-control" required name="email" placeholder="{{ __('email') }}" value="{{ old('mail') }}">
                 <label>{{ __('Subject') }}</label>
-                <input type="text" class="form-control" required name="subject" placeholder="{{ __('Subject') }}" value="{{ old('subject') }}">
+                <input type="text" class="form-control" required name="subject" placeholder="{{ __('subject') }}" value="{{ old('subject') }}">
                 <label>{{ __('Massage') }}</label>
-                <textarea class="form-control" rows="10" required name="massage" placeholder="{{ __('Massage') }}">{{ old('massage') }}</textarea>
+                <textarea class="form-control" rows="10" required name="massage" placeholder="{{ __('massage') }}">{{ old('massage') }}</textarea>
                 {{-- <input class="mt-4" type="file" name="file" > --}}
                 <div class="btns mt-3">
-                    <button type="submit" class="btn btn-success mt-4">{{ __('Send') }}</button>
+                    <button type="submit" class="btn btn-success mt-4">{{ __('send') }}</button>
 
                 </div>
             </form>
