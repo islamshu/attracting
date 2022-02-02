@@ -133,7 +133,7 @@
 
                         </div>
                     </div>
-                        <br>
+                        {{-- <br>
 
                         <label for=""> {{ __('Range price') }} :</label>
                       
@@ -143,7 +143,7 @@
                             <span class="rangeValues"></span>
                             <input name="min_price"  value="{{ $request->min_price ? $request->min_price : 0}}" min="0" max="1000" step="1" type="range">
                             <input name="max_price"  value="{{  $request->max_price ? $request->max_price : 600 }}" min="0" max="1000" step="1" type="range">
-                          </section>
+                          </section> --}}
                         {{-- <section class="range-slider col-lg-6 col-md-6 col-sm-12">
                             
                             <span class="rangeValues"></span>
