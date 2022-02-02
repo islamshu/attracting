@@ -25,7 +25,8 @@
           <ul class="menu-content">
             <li><a class="menu-item" href="{{ route('company.comapny-message.index') }}" data-i18n="nav.dash.ecommerce">جميع الرسائل</a>
             </li>
-   
+            <li><a class="menu-item" href="{{ route('company.comapny-message.create') }}" data-i18n="nav.dash.ecommerce"> انشاء جديد</a>
+            </li>
             
           </ul>
           
