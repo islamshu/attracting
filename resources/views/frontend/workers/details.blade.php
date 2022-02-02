@@ -170,6 +170,11 @@
                                         <i class="far fa-badge-check"></i>
                                     </div>
                                     <div class="d-flex justify-content-start align-items-center">
+                                        <p>{{ __('Date of Birth') }} :</p>
+                                        <span>{{ $worker->DOB }}</span>
+                                        <i class="far fa-badge-check"></i>
+                                    </div>
+                                    <div class="d-flex justify-content-start align-items-center">
                                         <p>{{ __('age') }} :</p>
                                         <span>{{ $worker->age }}</span>
                                         <i class="far fa-badge-check"></i>
