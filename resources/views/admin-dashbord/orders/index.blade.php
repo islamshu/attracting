@@ -61,7 +61,7 @@
                                         <td>{{ $order->user->name}}</td>
                                         <td>{{ $order->user->phone}}</td>
                                         <td>{{ get_status_booking($order) }}</td>
-                                        <td>{{ $order->created_at }}</td>
+                                        <td>{{ $order->updated_at }}</td>
                                       
 
                                         <td>
