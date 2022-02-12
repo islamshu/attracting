@@ -25,7 +25,11 @@
         margin-right: unset !important;
     }
     
-    @media (max-width: 575.98px) {
+    .carousel-caption p {
+        margin-bottom: 2px !important;
+    }
+    
+    mar @media (max-width: 575.98px) {
         .features_icon {
             margin-bottom: 30px;
             margin-top: 30px;
