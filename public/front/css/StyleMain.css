@@ -1144,8 +1144,8 @@ form .fa-search {
     .carousel-caption h3 {
         font-size: 28px;
     }
-    .carousel-caption p {
-        font-size: 14px;
+    .carousel-caption p:first-of-type {
+        font-size: 24px;
     }
     .carousel-caption {
         text-align: center;
