@@ -1228,6 +1228,9 @@ form .fa-search {
         height: unset;
         text-align: center;
         margin: 10px 20px 20px 10px;
+        width: 60%;
+        margin: auto;
+        margin-bottom: 10px;
     }
     .item img {
         margin-left: 0;
