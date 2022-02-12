@@ -985,13 +985,14 @@ form .fa-search {
 .footer {
     background-color: var(--second-color);
     color: white;
-    padding-top: 200px;
+    /* padding-top: 200px; */
+    margin-top: 20px;
     position: relative;
 }
 
 .footer .newsletter {
-    position: absolute;
-    top: -10px;
+    position: relative;
+    top: -96px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     color: var(--second-color);
@@ -1030,7 +1031,7 @@ form .fa-search {
 }
 
 .footer .logo {
-    width: 140px;
+    width: 80px;
     margin-bottom: 20px;
 }
 
