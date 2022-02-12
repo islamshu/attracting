@@ -33,10 +33,6 @@
         font-size: 46px !important;
     }
     
-    .navbar-brand {
-        height: 56px;
-    }
-    
     @media (max-width: 575.98px) {
         .features_icon {
             margin-bottom: 30px;
