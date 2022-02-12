@@ -29,7 +29,11 @@
         margin-bottom: 2px !important;
     }
     
-    mar @media (max-width: 575.98px) {
+    .carousel-caption h3 {
+        font-size: 46px !important;
+    }
+    
+    @media (max-width: 575.98px) {
         .features_icon {
             margin-bottom: 30px;
             margin-top: 30px;
