@@ -19,6 +19,11 @@
         height: 94%;
     }
     
+    .mr-auto,
+    .mx-auto {
+        margin-left: auto !important;
+    }
+    
     @media (max-width: 575.98px) {
         .features_icon {
             margin-bottom: 30px;
