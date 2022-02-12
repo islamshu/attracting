@@ -42,9 +42,9 @@
                     <li class="links">{{ __('quick links') }}</li>
                     @foreach (\App\Page::get() as $item)
                     @if(app()->getLocale() == 'ar')
-                    <li class="mb-2"><i class="fas fa-caret-left"></i><a href="{{ route('fron.page',$item->slug) }}">{{ $item->title }} </a></li>
+                    <li class="mb-2"><i class="fas fa-caret-left" style="margin-left: 2px;color:#04aa6d"></i><a href="{{ route('fron.page',$item->slug) }}">{{ $item->title }} </a></li>
                     @else
-                    <li class="mb-2"><i class="fas fa-caret-right"></i><a href="{{ route('fron.page',$item->slug) }}">{{ $item->title }} </a></li>
+                    <li class="mb-2"><i class="fas fa-caret-right"  style="margin-right: 2px;color:#04aa6d"></i><a href="{{ route('fron.page',$item->slug) }}">{{ $item->title }} </a></li>
                     @endif
                     @endforeach
                  
