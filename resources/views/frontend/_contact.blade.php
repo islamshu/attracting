@@ -15,7 +15,7 @@
                                 <p>{!! $item->dec !!}</p>
                             </div>
                             <div class="icon">
-                                <i class="fa-4x {{ $item->icon }} timeline_icon"></i>
+                                <i class="fa-3x {{ $item->icon }} timeline_icon"></i>
                             </div>
                         </div>
                     </div>
