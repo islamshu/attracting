@@ -68,9 +68,8 @@
         <i class="far fa-search"></i>
         <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
       </form> --}}
-      <div class="btns">
       @guest
-            
+            <div class="btns">
                 
                 <a href="{{ route('get_login') }}" class="btn login">{{ __('login') }}</a>
                 <div class="dropdown">
@@ -82,7 +81,7 @@
                       <a class="dropdown-item" href="{{ route('get_register_company') }}">{{ __('Company Register') }}</a>
                     </div>
                   </div>           
-               
+                </div>
             @else
 
                 <div class="dropdown">
@@ -104,7 +103,6 @@
                 <a style="display: inline-flex;font-size: 20px;" @if ($lang == 'ar') href="{{ route('change-lang', 'en') }}" @else href="{{ route('change-lang', 'ar') }}" @endif> 
                     {{ $lang == 'ar' ? 'EN' : 'AR' }}
                    </a>
-                </div>    
             </div>
            
 
