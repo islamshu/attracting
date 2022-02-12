@@ -1,14 +1,14 @@
 <div class="upperBar">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-3 col-md-6 ">
                 <div class="number">
                     <i class="fas fa-phone-alt"></i>
                     {{ get_general_value('phone') }}
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-3 col-md-6 ">
                 <div class="address">
                     <i class="fas fa-map-marker-alt"></i>
                     {{ get_general_value('address_' . app()->getLocale()) }}
@@ -16,14 +16,14 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-3 col-md-6 ">
                 <div class="mail">
                     <i class="fas fa-envelope"></i>
                     {{ get_general_value('email') }}
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-3 col-md-6 ">
                 <div class="contact">
                     <ul class="list-unstyled d-flex justify-content-end">
                         <li class=""><a href=" {{ get_general_value('facebook') }}"><i
