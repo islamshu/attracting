@@ -52,6 +52,7 @@ justify-content: space-evenly;
 
 .row {
     justify-content: start;
+    align-items: center;
 }
 
 

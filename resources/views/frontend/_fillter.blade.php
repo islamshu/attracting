@@ -118,8 +118,10 @@
                             <input class="form-control" name="min_price"  value="{{ $request->min_price ? $request->min_price : 0}}" min="0" max="600" step="1" type="range">
                             <input class="form-control" name="max_price"  value="{{  $request->max_price ? $request->max_price : 600 }}" min="0" max="600" step="1" type="range">
                         </section> --}}
-                        <button type="button" class="btn btn-danger" id="clear_data"> {{ __('Clear') }}</button>
+                        <div>
+                            <button type="button" class="btn btn-danger" id="clear_data"> {{ __('Clear') }}</button>
 
+                        </div>
                     </div>
                 </div>
             </div>
