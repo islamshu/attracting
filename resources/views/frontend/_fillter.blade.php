@@ -33,10 +33,11 @@
 
             <h2 class="title wow animate__fadeInUp" data-wow-delay=".7s">{{ __('search for mids') }} </h2>
 
+            <form>
             <div class="filter rounded wow animate__fadeInUp" data-wow-delay=".7s">
                 <div class="row">
 
-                    <form class="form-inline Search my-2 my-lg-0 col-lg-6 col-md-6 col-sm-12" action="" id="search-form">
+                    <div class="form-inline Search my-2 my-lg-0 col-lg-6 col-md-6 col-sm-12" action="" id="search-form">
                         <input class="form-control mr-sm-2" type="search" name="title" value="{{ $request->title }}" placeholder="Search" aria-label="Search">
                         <button class="btn btn-info my-2 my-sm-0" type="submit">{{ __('Search') }}</button>
 
@@ -119,10 +120,10 @@
                         </section> --}}
                         <button type="button" class="btn btn-warning" id="clear_data"> {{ __('Clear') }}</button>
 
-                    </form>
+                    </div>
                 </div>
             </div>
-
+        </form>
 
 
 
