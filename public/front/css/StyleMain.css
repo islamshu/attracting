@@ -108,8 +108,8 @@ a {
     z-index: 11;
     position: relative;
     background-color: #fafafa;
-    padding: 10px;
-    transition: all .5s;
+    /* padding: 10px;
+    transition: all .5s; */
 }
 
 .collapse form {
