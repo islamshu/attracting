@@ -40,7 +40,7 @@
                     <div class="form-inline Search my-2 my-lg-0 col-lg-6 col-md-6 col-sm-12" action="" id="search-form">
                         <input class="form-control mr-sm-2" type="search" name="title" value="{{ $request->title }}" placeholder="Search" aria-label="Search">
                         <button class="btn btn-info my-2 my-sm-0" type="submit">{{ __('Search') }}</button>
-
+                    </div>
                         <div class="select-items col-lg-6 col-md-6 col-sm-12">
 
                             <select class="select form-control m-2"  name="governorate_id" id="governorate_id">
@@ -100,7 +100,7 @@
                             </select>
 
                         </div>
-                    </div>
+                    
                         {{-- <br>
 
                         <label for=""> {{ __('Range price') }} :</label>
