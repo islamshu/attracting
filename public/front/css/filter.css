@@ -96,6 +96,8 @@ justify-content: space-evenly;
 
 .form-control {
     border-radius: .4rem !important;
+    padding: unset !important;
+    padding-right: 3% !important;
 }
 
 .services-items {
