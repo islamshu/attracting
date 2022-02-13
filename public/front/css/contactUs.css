@@ -1,0 +1,66 @@
+@import url(StyleMain.css);
+:root {
+    --main-color: #04aa6d;
+    --second-color: #282a35;
+}
+
+.img-main {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    background-color: #f8f9fa!important;
+}
+
+.img-main img {
+    width: 100%;
+    height: 90%;
+    padding-top: 100px;
+}
+
+.main-content {
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+
+.main-content h1 {
+    margin-bottom: 40px;
+}
+
+.contact-box {
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+    padding: 40px;
+}
+
+.form-control {
+    background-color: #fafafa47;
+    width: 100% !important;
+}
+
+label {
+    margin-top: 10px;
+}
+
+.breadcrumb {
+    background-color: transparent;
+}
+
+button {
+    padding: 5px 10px;
+}
+
+.footer {
+    padding-top: 40px !important;
+}
+
+@media (max-width: 575.98px) {
+    .img-main {
+        text-align: center;
+    }
+    .main-content h1 {
+        font-size: 20px;
+    }
+    .contact-box {
+        padding: 10px;
+        overflow: hidden;
+    }
+}

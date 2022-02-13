@@ -1,0 +1,18 @@
+@import url(contactUs.css);
+:root {
+    --main-color: #04aa6d;
+    --second-color: #282a35;
+}
+
+body {
+    direction: rtl !important;
+    text-align: right;
+}
+
+.text-right {
+    text-align: left !important;
+}
+
+.text-left {
+    text-align: right !important;
+}

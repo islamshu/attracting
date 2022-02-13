@@ -1,10 +1,16 @@
 @extends('layouts.frontend')
 @section('css')
 @if (app()->getLocale() == 'en')
-<link rel="stylesheet" href="{{ asset('user_dash/css/mids.css') }}">
-
+<link rel="stylesheet" href="{{ asset('front/css/contactUs.css') }}">
 @else
-<link rel="stylesheet" href="{{ asset('user_dash/css/midsAr.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/contactUsAR.css') }}">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap');
+    *{
+        font-family: 'Cairo', sans-serif !important;
+    }
+    
+</style>
 
 @endif
 @endsection
