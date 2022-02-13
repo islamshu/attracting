@@ -120,11 +120,14 @@ justify-content: space-evenly;
         display: none;
     }
     .main-filter .btn {
-        margin-right: 2% !important;
+        margin-right: 3% !important;
+        position: relative;
+        display: inline-block;
     }
     .main-filter .btn-danger {
         margin-right: 36% !important;
         display: inline-block;
+        position: relative;
     }
     .filter .form-inline .form-control {
         padding: 0;
