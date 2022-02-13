@@ -119,6 +119,13 @@ justify-content: space-evenly;
     .filter .clear-btn {
         display: none;
     }
+    .main-filter .btn {
+        margin-right: 2% !important;
+    }
+    .main-filter .btn-danger {
+        margin-right: 36% !important;
+        display: inline-block;
+    }
     .filter .form-inline .form-control {
         padding: 0;
         padding-right: 3px;
