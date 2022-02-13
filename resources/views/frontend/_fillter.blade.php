@@ -87,7 +87,7 @@
                             </select>
 
                         </div>
-                        <div class="select-items col-lg-6 col-md-6 col-sm-12" >
+                        <div class="select-items col-lg-3 col-md-3 col-sm-6" >
                             <select class="select form-control m-2" onchange="filter()" id="natonality" name="natonality">
                                 <option value="" selected disabled>{{ __('Chose Natonality') }}</option>
                                 
