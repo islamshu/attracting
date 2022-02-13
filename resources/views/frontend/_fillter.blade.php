@@ -36,7 +36,7 @@
             <div class="filter rounded wow animate__fadeInUp" data-wow-delay=".7s">
                 <div class="row">
 
-                    <form class="form-inline Search my-2 my-lg-0 col-lg-12  col-md-12 col-sm-12" action="" id="search-form">
+                    <form class="form-inline Search my-2 my-lg-0 col-lg-6 col-md-6 col-sm-12" action="" id="search-form">
                         <input class="form-control mr-sm-2" type="search" name="title" value="{{ $request->title }}" placeholder="Search" aria-label="Search">
                         <button class="btn btn-info my-2 my-sm-0" type="submit">{{ __('Search') }}</button>
 
