@@ -1132,6 +1132,10 @@ form .fa-search {
 } */
 
 @media (max-width: 767.98px) {
+    .services-items {
+        margin-top: 80px;
+        margin-bottom: 50px;
+    }
     .contact ul {
         justify-content: start !important;
     }
