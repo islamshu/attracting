@@ -16,3 +16,7 @@ body {
 .text-left {
     text-align: right !important;
 }
+
+.breadcrumb {
+    direction: ltr !important;
+}
