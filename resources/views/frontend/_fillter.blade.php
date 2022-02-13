@@ -40,7 +40,7 @@
                         <input class="form-control mr-sm-2" type="search" name="title" value="{{ $request->title }}" placeholder="Search" aria-label="Search">
                         <button class="btn btn-info my-2 my-sm-0" type="submit">{{ __('Search') }}</button>
 
-                        <div class="select-items col-lg-12 col-md-12 col-sm-12">
+                        <div class="select-items col-lg-6 col-md-6 col-sm-12">
 
                             <select class="select form-control m-2"  name="governorate_id" id="governorate_id">
                                 <option value="" selected disabled>{{ __('Chose Governorate') }}</option>
