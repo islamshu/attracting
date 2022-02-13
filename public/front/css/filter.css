@@ -54,10 +54,11 @@ justify-content: space-evenly;
     justify-content: start;
 }
 
-.filter .form-inline .form-control {
+
+/* .filter .form-inline .form-control {
     width: 70% !important;
     margin: .5rem;
-}
+} */
 
 .Search button {
     font-size: 14px;
@@ -104,6 +105,11 @@ justify-content: space-evenly;
     .select-items {
         flex-direction: column;
     }
+}
+
+.filter .form-inline .form-control {
+    padding: 0;
+    padding-right: 3px;
 }
 
 @media (max-width: 776px) {
