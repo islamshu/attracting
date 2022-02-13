@@ -63,22 +63,9 @@
                             </select>
                             
                            
-                            <select class="select form-control m-2" onchange="filter()" id="natonality" name="natonality">
-                                <option value="" selected disabled>{{ __('Chose Natonality') }}</option>
-                                
-                                @forelse (get_natonalty() as $item)
-
-                                <option value="{{ $item }}" @if($item == $request->natonality) selected @endif >{{ $item }}</option>
-    
-                                @empty
-                                    
-                                @endforelse
-
-                            </select>
+                           
                         </div>
                         <!-- <a href="" class="btn btn-info clear-btn rounded " >Clear</a> -->
-
-
                         <div class="select-items col-lg-6 col-md-6 col-sm-12" >
                             <select class="select form-control m-2" onchange="filter()" name="states">
 
@@ -100,6 +87,21 @@
                             </select>
 
                         </div>
+                        <div class="select-items col-lg-6 col-md-6 col-sm-12" >
+                            <select class="select form-control m-2" onchange="filter()" id="natonality" name="natonality">
+                                <option value="" selected disabled>{{ __('Chose Natonality') }}</option>
+                                
+                                @forelse (get_natonalty() as $item)
+
+                                <option value="{{ $item }}" @if($item == $request->natonality) selected @endif >{{ $item }}</option>
+    
+                                @empty
+                                    
+                                @endforelse
+
+                            </select>
+                        </div>
+                        
                     
                         {{-- <br>
 
