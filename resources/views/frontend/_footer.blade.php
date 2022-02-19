@@ -82,17 +82,18 @@
         </div>
   
     </div>
-  </div>
-  <div class="wrapper-cover">
+    <div class="wrapper-cover">
     
-    <div class="wrapper">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
-        <span>...جاري التحميل</span>
-    </div>
-
-</div>
+        <div class="wrapper">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <span>...جاري التحميل</span>
+        </div>
+    
+    </div> 
+  </div>
+  
