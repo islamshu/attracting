@@ -58,8 +58,8 @@ $(document).ready(function() {
 
 
     new WOW().init();
-    $(window).on("load", function() {
-        $('.wrapper-cover').fadeOut("slow")
-    })
+    // $(window).on("load", function() {
+    //     $('.wrapper-cover').fadeOut("slow")
+    // })
 
 });

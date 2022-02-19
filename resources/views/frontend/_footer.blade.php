@@ -82,7 +82,7 @@
         </div>
   
     </div>
-    <div class="wrapper-cover">
+    {{-- <div class="wrapper-cover">
     
         <div class="wrapper">
             <div class="circle"></div>
@@ -94,6 +94,6 @@
             <span>...جاري التحميل</span>
         </div>
     
-    </div> 
+    </div>  --}}
   </div>
   
